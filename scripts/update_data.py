@@ -293,6 +293,13 @@ def fetch_ah_bonus():
 AH_SEARCH = "https://api.ah.nl/mobile-services/product/search/v2"
 
 
+AH_TERMS = """melk kaas vlees kip gehakt brood groente fruit aardappel tomaat appel banaan sla pasta rijst saus chips
+koek chocolade snoep drop noten bier wijn frisdrank cola sap water koffie thee yoghurt kwark vla boter room eieren
+ijs pizza diepvries friet shampoo douche deo tandpasta scheer wasmiddel afwas schoonmaak papier soep bouillon kruiden
+olie mayonaise salade vis zalm worst ham salami beleg pindakaas jam hagelslag ontbijt muesli cracker baby luiers
+kat hond vega tofu wraps noodles mexicaans italiaans aziatisch taart cake gebak vers maaltijd snack borrel nootjes""".split()
+
+
 def ah_search_pages(s, base_params, sorts=("RELEVANCE",)):
     """Alle pagina's van één zoekvraag, eventueel met meerdere sorteringen om voorbij de 3000 te komen."""
     seen, total_el = {}, 0
@@ -316,14 +323,17 @@ def ah_search_pages(s, base_params, sorts=("RELEVANCE",)):
 
 def ah_scan_catalog(s):
     probe = status.setdefault("probe", {})
+    cats, variant = [], None
     r = s.get("https://api.ah.nl/mobile-services/v1/product-shelves/categories", timeout=30)
-    r.raise_for_status()
-    cats = r.json()
-    save_debug("ah_categories", cats)
-    probe["ah_categories"] = len(cats)
-    # Welke parameter filtert op categorie? Test met de eerste categorie.
-    c0 = cats[0]
-    variant = None
+    probe["ah_categories_status"] = r.status_code
+    if r.ok:
+        cats = r.json()
+        save_debug("ah_categories", cats)
+    # Metadata van een zoekvraag (filters/facetten) bewaren, zonder de producten
+    rm = s.get(AH_SEARCH, params={"query": "melk", "page": 0, "size": 5, "sortOn": "RELEVANCE"}, timeout=30)
+    if rm.ok:
+        save_debug("ah_search_meta", {k: v for k, v in rm.json().items() if k != "products"})
+    c0 = cats[0] if cats else {}
     for key, val in (("taxonomyId", c0.get("id")), ("taxonomy", c0.get("id")),
                      ("taxonomySlug", c0.get("slugifiedName") or c0.get("slug"))):
         if val is None:
@@ -343,11 +353,8 @@ def ah_scan_catalog(s):
             allp.update(got)
             cover[c.get("name", str(val))] = [len(got), tot]
     else:  # terugval: zoeken op algemene woorden
-        for term in ["melk", "kaas", "vlees", "kip", "brood", "groente", "fruit", "pasta", "rijst", "saus", "chips",
-                     "koek", "chocolade", "snoep", "bier", "wijn", "frisdrank", "sap", "koffie", "thee", "yoghurt",
-                     "boter", "ijs", "pizza", "diepvries", "shampoo", "tandpasta", "wasmiddel", "papier", "soep",
-                     "salade", "vis", "worst", "noten", "ontbijt", "beleg", "baby", "kat", "hond", "water"]:
-            got, tot = ah_search_pages(s, {"query": term})
+        for term in AH_TERMS:
+            got, tot = ah_search_pages(s, {"query": term}, sorts=("RELEVANCE", "PRICELOWHIGH", "PRICEHIGHLOW"))
             allp.update(got)
             cover[term] = [len(got), tot]
     probe["ah_cover"] = cover
@@ -395,8 +402,43 @@ def _jumbo_promo(prod):
     return None, None
 
 
+def jumbo_explore():
+    """Probeert een paar mogelijke adressen en bewaart status + begin van het antwoord (om de juiste route te vinden)."""
+    res = {}
+    tries = [
+        ("GET", "https://mobileapi.jumbo.com/v17/search?q=melk&limit=5", None),
+        ("GET", "https://mobileapi.jumbo.com/v17/products?q=melk&limit=5", None),
+        ("GET", "https://mobileapi.jumbo.com/v17/categories", None),
+        ("GET", "https://mobileapi.jumbo.com/", None),
+        ("GET", "https://www.jumbo.com/aanbiedingen/nu", None),
+        ("GET", "https://www.jumbo.com/producten/?searchType=keyword&searchTerms=melk", None),
+        ("POST", "https://www.jumbo.com/api/graphql", {"query": "{ __typename }"}),
+    ]
+    hdr = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",
+           "Accept-Language": "nl-NL,nl;q=0.9"}
+    for method, url, body in tries:
+        try:
+            r = requests.request(method, url, json=body, headers=hdr, timeout=30)
+            t = r.text
+            info = {"status": r.status_code, "len": len(t), "start": t[:300]}
+            for marker in ("__NUXT__", "__NEXT_DATA__", "apollo", "promotion", "graphql", "application/ld+json"):
+                if marker in t:
+                    info.setdefault("markers", []).append(marker)
+            res[url] = info
+            if r.ok and len(t) > 1000:
+                (DEBUG / ("jumbo_" + re.sub(r"[^a-z0-9]+", "_", url.split("//")[1])[:60] + ".txt")).write_text(t[:200_000], encoding="utf-8")
+        except Exception as e:
+            res[url] = {"error": str(e)[:200]}
+    status.setdefault("probe", {})["jumbo_explore"] = res
+
+
 def fetch_jumbo_bonus():
     probe = status.setdefault("probe", {})
+    DEBUG.mkdir(parents=True, exist_ok=True)
+    try:
+        jumbo_explore()
+    except Exception as e:
+        probe["jumbo_explore_error"] = str(e)
     s = requests.Session()
     s.headers.update(JUMBO_HEADERS)
     out, last_err = {}, None
