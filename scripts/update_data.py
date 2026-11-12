@@ -221,6 +221,12 @@ def ah_product_to_bonus(p):
         text = labels[0].get("defaultDescription") or ""
     if not (p.get("isBonus") or text or (now and before and now < before)):
         return None
+    # Geen permanente online-kortingen of Gall & Gall: alleen de echte bonus
+    low = text.lower()
+    if any(x in low for x in ("volume voordeel", "volumevoordeel", "pakketkorting", "gall & gall", "kaartkorting")):
+        return None
+    if (p.get("bonusEndDate") or "")[:4] >= "2099" or p.get("shopType") not in (None, "AH"):
+        return None
     eff, qty = effective(before or now, text, now_price=now if (now and before and now < before) else None)
     return pid, {
         "t": text or "Bonus",
@@ -370,117 +376,78 @@ def ah_scan_catalog(s):
 
 # ---------------------------------------------------------------- bonus: Jumbo
 
-JUMBO_HEADERS = {"User-Agent": "Jumbo/12.0 (Android 14)", "Accept": "application/json"}
-JUMBO_ID = re.compile(r"^\d+[A-Z]{2,4}$")
+MONTHS = {"jan": 1, "feb": 2, "mrt": 3, "apr": 4, "mei": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "okt": 10, "nov": 11, "dec": 12}
+WEB_HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",
+               "Accept-Language": "nl-NL,nl;q=0.9", "Accept": "text/html,application/xhtml+xml"}
 
 
-def _jumbo_price(prod):
-    pr = prod.get("prices") or {}
-    reg = (pr.get("price") or {}).get("amount")
-    promo = (pr.get("promotionalPrice") or {}).get("amount")
-    f = lambda c: round(c / 100, 2) if isinstance(c, (int, float)) and c > 20 else c
-    return f(reg), f(promo)
+def _text(html):
+    t = re.sub(r"<!--.*?-->", "", html, flags=re.S)
+    t = re.sub(r"<[^>]+>", " ", t)
+    t = t.replace("&amp;", "&").replace("&#39;", "'").replace("&quot;", '"').replace("&nbsp;", " ")
+    return re.sub(r"\s+", " ", t).strip()
 
 
-def _ms_date(v):
-    if isinstance(v, (int, float)) and v > 1e11:
-        return datetime.fromtimestamp(v / 1000, timezone.utc).date().isoformat()
-    return v
+def _until(subtitle):
+    """'wo 11 t/m di 17 nov' -> '2026-11-17'"""
+    m = re.search(r"t/m\s+\w+\s+(\d{1,2})\s+([a-z]{3})", subtitle or "")
+    if not m or m.group(2) not in MONTHS:
+        return None
+    today = date.today()
+    mon, day = MONTHS[m.group(2)], int(m.group(1))
+    year = today.year + (1 if mon < today.month - 6 else 0)
+    try:
+        return date(year, mon, day).isoformat()
+    except ValueError:
+        return None
 
 
-def _jumbo_promo(prod):
-    for key in ("promotion", "promotions"):
-        v = prod.get(key)
-        if isinstance(v, list):
-            v = v[0] if v else None
-        if isinstance(v, dict):
-            tags = v.get("tags") or []
-            txt = " ".join(t.get("text", "") for t in tags if isinstance(t, dict)).strip()
-            txt = txt or v.get("label") or v.get("name") or v.get("title") or ""
-            txt = re.sub(r"^nu\s+", "", txt, flags=re.I)
-            return txt.strip(), _ms_date(v.get("toDate") or v.get("endDate") or v.get("validUntil"))
-    return None, None
-
-
-def jumbo_explore():
-    """Probeert een paar mogelijke adressen en bewaart status + begin van het antwoord (om de juiste route te vinden)."""
-    res = {}
-    tries = [
-        ("GET", "https://mobileapi.jumbo.com/v17/search?q=melk&limit=5", None),
-        ("GET", "https://mobileapi.jumbo.com/v17/products?q=melk&limit=5", None),
-        ("GET", "https://mobileapi.jumbo.com/v17/categories", None),
-        ("GET", "https://mobileapi.jumbo.com/", None),
-        ("GET", "https://www.jumbo.com/aanbiedingen/nu", None),
-        ("GET", "https://www.jumbo.com/producten/?searchType=keyword&searchTerms=melk", None),
-        ("POST", "https://www.jumbo.com/api/graphql", {"query": "{ __typename }"}),
-    ]
-    hdr = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",
-           "Accept-Language": "nl-NL,nl;q=0.9"}
-    for method, url, body in tries:
-        try:
-            r = requests.request(method, url, json=body, headers=hdr, timeout=30)
-            t = r.text
-            info = {"status": r.status_code, "len": len(t), "start": t[:300]}
-            for marker in ("__NUXT__", "__NEXT_DATA__", "apollo", "promotion", "graphql", "application/ld+json"):
-                if marker in t:
-                    info.setdefault("markers", []).append(marker)
-            res[url] = info
-            if r.ok and len(t) > 1000:
-                (DEBUG / ("jumbo_" + re.sub(r"[^a-z0-9]+", "_", url.split("//")[1])[:60] + ".txt")).write_text(t[:200_000], encoding="utf-8")
-        except Exception as e:
-            res[url] = {"error": str(e)[:200]}
-    status.setdefault("probe", {})["jumbo_explore"] = res
+def parse_jumbo_cards(html):
+    """Actiekaarten van jumbo.com/aanbiedingen: id, titel, actietekst, einddatum, link."""
+    cards = {}
+    for block in re.split(r'<li class="jum-card card-promotion', html)[1:]:
+        block = block[: block.find("</li>")] if "</li>" in block else block[:6000]
+        href = re.search(r'href="(/aanbiedingen/[^"]+)"', block)
+        if not href:
+            continue
+        tags = [_text(t) for t in re.findall(r'data-testid="jum-tag"[^>]*>(.*?)</(?:span|div)>\s*</(?:div|span)>', block, flags=re.S)]
+        tag = " ".join(t for t in tags if t).strip()
+        title = re.search(r'class="title-link"[^>]*>(.*?)</a>', block, flags=re.S)
+        sub = re.search(r'class="subtitle"[^>]*>(.*?)</p>', block, flags=re.S)
+        sub_t = _text(sub.group(1)) if sub else ""
+        cards[href.group(1)] = {"t": tag, "title": _text(title.group(1)) if title else "", "until": _until(sub_t), "period": sub_t}
+    return cards
 
 
 def fetch_jumbo_bonus():
     probe = status.setdefault("probe", {})
-    DEBUG.mkdir(parents=True, exist_ok=True)
-    try:
-        jumbo_explore()
-    except Exception as e:
-        probe["jumbo_explore_error"] = str(e)
     s = requests.Session()
-    s.headers.update(JUMBO_HEADERS)
-    out, last_err = {}, None
-    for ver in ("v17", "v18", "v19", "v16"):
-        base = f"https://mobileapi.jumbo.com/{ver}"
+    s.headers.update(WEB_HEADERS)
+    r = s.get("https://www.jumbo.com/aanbiedingen/nu", timeout=60)
+    r.raise_for_status()
+    cards = parse_jumbo_cards(r.text)
+    probe["jumbo_cards"] = len(cards)
+    out, pages_ok, first = {}, 0, True
+    for href, c in list(cards.items())[:400]:
+        if not c["t"]:
+            continue
         try:
-            r = s.get(base + "/search", params={"offset": 0, "limit": 30, "q": ""}, timeout=30)
-            probe[f"jumbo_{ver}_search"] = r.status_code
-            r.raise_for_status()
-            j = r.json()
-            save_debug("jumbo_search", j)
-            total = (j.get("products") or {}).get("total") or 0
-            probe["jumbo_total"] = total
-            limit, offset, scanned = 30, 0, 0
-            while offset < total and offset < 30000:
-                if offset:
-                    r = s.get(base + "/search", params={"offset": offset, "limit": limit, "q": ""}, timeout=30)
-                    if not r.ok:
-                        probe["jumbo_stop"] = [offset, r.status_code]
-                        break
-                    j = r.json()
-                data = (j.get("products") or {}).get("data", [])
-                if not data:
-                    break
-                for d in data:
-                    scanned += 1
-                    txt, until = _jumbo_promo(d)
-                    if txt is None:
-                        continue
-                    reg, promo = _jumbo_price(d)
-                    eff, qty = effective(reg, txt, now_price=promo)
-                    out[d["id"]] = {"t": txt or "Aanbieding", "p": eff, "q": qty, "w": reg, "until": until,
-                                    "n": d.get("title"), "s": d.get("quantity")}
-                offset += limit
-                time.sleep(0.03)
-            probe["jumbo_scanned"] = scanned
-            return out
-        except Exception as e:
-            last_err = e
-            log(f"Jumbo {ver}: {e}")
-    if last_err and not out:
-        status["errors"].append(f"Jumbo aanbiedingen: {last_err}")
+            rr = s.get("https://www.jumbo.com" + href, timeout=60)
+        except Exception:
+            continue
+        if not rr.ok:
+            probe.setdefault("jumbo_page_errors", []).append([href, rr.status_code])
+            continue
+        if first:
+            (DEBUG / "jumbo_promotion_page.txt").write_text(rr.text[:300_000], encoding="utf-8")
+            first = False
+        pages_ok += 1
+        ids = set(re.findall(r'href="/producten/[^"?#]*?-(\d+[A-Z]{2,4})"', rr.text))
+        for pid in ids:
+            out[pid] = {"t": c["t"], "p": None, "q": 1, "w": None, "until": c["until"], "title": c["title"]}
+        time.sleep(0.4)
+    probe["jumbo_pages"] = pages_ok
+    probe["jumbo_sample_cards"] = list(cards.values())[:15]
     return out
 
 
@@ -517,6 +484,14 @@ def main():
                         bonus[store] = kept
                         status["errors"].append(f"{store}: vorige bonus aangehouden ({len(kept)})")
 
+    # Jumbo-acties: effectieve prijs uitrekenen met de normale prijs uit de prijslijst
+    jp = prices.get("jumbo", {}).get("products", {})
+    for pid, bb in bonus["jumbo"].items():
+        if bb.get("p") is None and pid in jp:
+            reg = jp[pid][1]
+            eff, qty = effective(reg, bb["t"])
+            bb.update({"p": eff, "q": qty, "w": reg})
+
     # Bonusproducten die niet in de prijslijst staan toch toevoegen
     for store in STORES:
         prods = prices.get(store, {}).get("products", {})
@@ -526,7 +501,7 @@ def main():
                 unit, qty = parsed if parsed and parsed[1] > 0 else (None, None)
                 prods[pid] = [b["n"], b["w"], b.get("s") or "", round(b["w"] / qty, 2) if unit else None, unit, None]
         for b in bonus[store].values():
-            b.pop("n", None); b.pop("s", None)
+            b.pop("n", None); b.pop("s", None); b.pop("title", None)
 
     now = datetime.now(timezone.utc).isoformat(timespec="minutes")
     status["updated"] = now
