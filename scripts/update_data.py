@@ -428,6 +428,7 @@ def fetch_jumbo_bonus():
     r = s.get("https://www.jumbo.com/aanbiedingen/nu", timeout=60)
     r.raise_for_status()
     cards = parse_jumbo_cards(r.text)
+    (DEBUG / "jumbo_aanbiedingen_full.txt").write_text(r.text, encoding="utf-8")  # tijdelijk: volledige pagina
     # Acties die wel gelinkt zijn maar niet als kaart herkend: later de tekst van de actiepagina zelf halen
     for href in set(re.findall(r'href="(/aanbiedingen/[a-z0-9-]+/[0-9]+)"', r.text)):
         cards.setdefault(href, {"t": "", "title": "", "until": None, "period": "", "fromPage": True})
