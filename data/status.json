@@ -1,17 +1,16 @@
 {
- "updated": "2026-11-12T20:04+00:00",
+ "updated": "2026-11-12T20:12+00:00",
  "prices": {
   "ah": 16173,
   "jumbo": 18296
  },
  "bonus": {
   "ah": 2158,
-  "jumbo": 1369
+  "jumbo": 1372
  },
- "errors": [
-  "AH bonuspagina: 500 Server Error: Internal Server Error for url: https://api.ah.nl/mobile-services/bonuspage/v1/metadata"
- ],
+ "errors": [],
  "probe": {
+  "ah_bonuspage": "500 Server Error: Internal Server Error for url: https://api.ah.nl/mobile-services/bonuspage/v1/metadata",
   "ah_categories_status": 404,
   "ah_variant": null,
   "ah_cover": {
