@@ -1,16 +1,15 @@
 {
- "updated": "2026-11-12T19:50+00:00",
+ "updated": "2026-11-12T19:54+00:00",
  "prices": {
   "ah": 16173,
   "jumbo": 18296
  },
  "bonus": {
-  "ah": 12704,
-  "jumbo": 0
+  "ah": 2158,
+  "jumbo": 139
  },
  "errors": [
-  "AH bonuspagina: 500 Server Error: Internal Server Error for url: https://api.ah.nl/mobile-services/bonuspage/v1/metadata",
-  "Jumbo aanbiedingen: 404 Client Error: Not Found for url: https://mobileapi.jumbo.com/v16/search?offset=0&limit=30&q="
+  "AH bonuspagina: 500 Server Error: Internal Server Error for url: https://api.ah.nl/mobile-services/bonuspage/v1/metadata"
  ],
  "probe": {
   "ah_categories_status": 404,
@@ -362,48 +361,81 @@
    ]
   },
   "ah_scanned": 28261,
-  "jumbo_explore": {
-   "https://mobileapi.jumbo.com/v17/search?q=melk&limit=5": {
-    "error": "HTTPSConnectionPool(host='mobileapi.jumbo.com', port=443): Read timed out. (read timeout=30)"
+  "jumbo_cards": 12,
+  "jumbo_pages": 12,
+  "jumbo_sample_cards": [
+   {
+    "t": "Online spellen spelen 50% korting",
+    "title": "Samen spellen spelen",
+    "until": "2027-01-05",
+    "period": "wo 4 nov t/m di 5 jan"
    },
-   "https://mobileapi.jumbo.com/v17/products?q=melk&limit=5": {
-    "error": "HTTPSConnectionPool(host='mobileapi.jumbo.com', port=443): Read timed out. (read timeout=30)"
+   {
+    "t": "voor 9,99",
+    "title": "Page Compleet Schoon, Kussenzacht of Sensitive",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
    },
-   "https://mobileapi.jumbo.com/v17/categories": {
-    "error": "HTTPSConnectionPool(host='mobileapi.jumbo.com', port=443): Read timed out. (read timeout=30)"
+   {
+    "t": "2 voor 6,99",
+    "title": "Jumbo's Dolce Gusto",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
    },
-   "https://mobileapi.jumbo.com/": {
-    "error": "HTTPSConnectionPool(host='mobileapi.jumbo.com', port=443): Read timed out. (read timeout=30)"
+   {
+    "t": "1+1 gratis",
+    "title": "Alle Easy Chicken Tonight of Easy Asia Tonight",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
    },
-   "https://www.jumbo.com/aanbiedingen/nu": {
-    "status": 200,
-    "len": 876724,
-    "start": "<!DOCTYPE html><html  lang=\"nl-NL\" dir=\"ltr\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Aanbiedingen | Nu in de aanbieding | Jumbo</title><script type=\"text/javascript\">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n      new Da",
-    "markers": [
-     "__NUXT__",
-     "promotion",
-     "graphql"
-    ]
+   {
+    "t": "1+1 gratis",
+    "title": "Alle Jumbo wokgroenten zak à 400 gram of Jumbo's woksauzen",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
    },
-   "https://www.jumbo.com/producten/?searchType=keyword&searchTerms=melk": {
-    "status": 200,
-    "len": 907926,
-    "start": "<!DOCTYPE html><html  lang=\"nl-NL\" dir=\"ltr\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Melk kopen &amp; bestellen | Jumbo</title><script type=\"text/javascript\">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n      new Date().get",
-    "markers": [
-     "__NUXT__",
-     "promotion",
-     "graphql"
-    ]
+   {
+    "t": "2 voor 2,99",
+    "title": "Croky",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
    },
-   "https://www.jumbo.com/api/graphql": {
-    "status": 401,
-    "len": 48,
-    "start": "{\"errors\":[{\"message\":\"No client headers set\"}]}"
+   {
+    "t": "2 voor 3,99",
+    "title": "Beemster",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "voor 0,99",
+    "title": "Rucola, veldsla of melanges",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "25% korting",
+    "title": "Leffe of Kasteelbier",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "25% korting",
+    "title": "Speciaalbieren van Grolsch, Grolsch Radler of Grimbergen",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "voor 4,99",
+    "title": "Los Gansos",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "2 voor 3,99",
+    "title": "Heinz of Wijko sauzen",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
    }
-  },
-  "jumbo_v17_search": 404,
-  "jumbo_v18_search": 404,
-  "jumbo_v19_search": 404,
-  "jumbo_v16_search": 404
+  ]
  }
 }
