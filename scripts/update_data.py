@@ -280,28 +280,84 @@ def fetch_ah_bonus():
         status["errors"].append(f"AH bonuspagina: {e}")
         log(traceback.format_exc())
 
-    # Route 2 (aanvulling/terugval): zoeken met bonusfilter
+    # Route 2: het hele assortiment doorzoeken, per categorie (de zoek-API geeft max ~3000 per vraag)
     if len(out) < 50:
         try:
-            page, total = 0, 1
-            while page < total and page < 40:
-                r = s.get("https://api.ah.nl/mobile-services/product/search/v2",
-                          params={"query": "", "page": page, "size": 750, "sortOn": "RELEVANCE", "bonus": "BONUS"},
-                          timeout=60)
-                r.raise_for_status()
-                j = r.json()
-                if page == 0:
-                    save_debug("ah_search_bonus", j)
-                total = j.get("page", {}).get("totalPages", 1)
-                for p in j.get("products", []):
-                    if p.get("isBonus"):
-                        res = ah_product_to_bonus(p)
-                        if res:
-                            out.setdefault(res[0], res[1])
-                page += 1
+            out.update(ah_scan_catalog(s))
         except Exception as e:
-            status["errors"].append(f"AH zoeken: {e}")
+            status["errors"].append(f"AH assortiment: {e}")
             log(traceback.format_exc())
+    return out
+
+
+AH_SEARCH = "https://api.ah.nl/mobile-services/product/search/v2"
+
+
+def ah_search_pages(s, base_params, sorts=("RELEVANCE",)):
+    """Alle pagina's van één zoekvraag, eventueel met meerdere sorteringen om voorbij de 3000 te komen."""
+    seen, total_el = {}, 0
+    for sort in sorts:
+        for page in range(0, 20):
+            r = s.get(AH_SEARCH, params={**base_params, "page": page, "size": 750, "sortOn": sort}, timeout=60)
+            if r.status_code == 400:   # voorbij het maximum
+                break
+            r.raise_for_status()
+            j = r.json()
+            total_el = j.get("page", {}).get("totalElements", 0)
+            for p in j.get("products", []):
+                seen[str(p.get("webshopId"))] = p
+            if page + 1 >= j.get("page", {}).get("totalPages", 1):
+                break
+            time.sleep(0.05)
+        if len(seen) >= total_el:
+            break
+    return seen, total_el
+
+
+def ah_scan_catalog(s):
+    probe = status.setdefault("probe", {})
+    r = s.get("https://api.ah.nl/mobile-services/v1/product-shelves/categories", timeout=30)
+    r.raise_for_status()
+    cats = r.json()
+    save_debug("ah_categories", cats)
+    probe["ah_categories"] = len(cats)
+    # Welke parameter filtert op categorie? Test met de eerste categorie.
+    c0 = cats[0]
+    variant = None
+    for key, val in (("taxonomyId", c0.get("id")), ("taxonomy", c0.get("id")),
+                     ("taxonomySlug", c0.get("slugifiedName") or c0.get("slug"))):
+        if val is None:
+            continue
+        rr = s.get(AH_SEARCH, params={"query": "", key: val, "page": 0, "size": 1, "sortOn": "RELEVANCE"}, timeout=30)
+        tot = rr.json().get("page", {}).get("totalElements") if rr.ok else None
+        probe[f"ah_{key}"] = [rr.status_code, tot]
+        if rr.ok and tot and tot < 10000:
+            variant = key
+            break
+    probe["ah_variant"] = variant
+    allp, cover = {}, {}
+    if variant:
+        for c in cats:
+            val = c.get("id") if variant != "taxonomySlug" else (c.get("slugifiedName") or c.get("slug"))
+            got, tot = ah_search_pages(s, {"query": "", variant: val}, sorts=("RELEVANCE", "PRICELOWHIGH", "PRICEHIGHLOW"))
+            allp.update(got)
+            cover[c.get("name", str(val))] = [len(got), tot]
+    else:  # terugval: zoeken op algemene woorden
+        for term in ["melk", "kaas", "vlees", "kip", "brood", "groente", "fruit", "pasta", "rijst", "saus", "chips",
+                     "koek", "chocolade", "snoep", "bier", "wijn", "frisdrank", "sap", "koffie", "thee", "yoghurt",
+                     "boter", "ijs", "pizza", "diepvries", "shampoo", "tandpasta", "wasmiddel", "papier", "soep",
+                     "salade", "vis", "worst", "noten", "ontbijt", "beleg", "baby", "kat", "hond", "water"]:
+            got, tot = ah_search_pages(s, {"query": term})
+            allp.update(got)
+            cover[term] = [len(got), tot]
+    probe["ah_cover"] = cover
+    probe["ah_scanned"] = len(allp)
+    out = {}
+    for p in allp.values():
+        if p.get("isBonus") or p.get("bonusMechanism"):
+            res = ah_product_to_bonus(p)
+            if res:
+                out[res[0]] = res[1]
     return out
 
 
@@ -309,16 +365,6 @@ def fetch_ah_bonus():
 
 JUMBO_HEADERS = {"User-Agent": "Jumbo/12.0 (Android 14)", "Accept": "application/json"}
 JUMBO_ID = re.compile(r"^\d+[A-Z]{2,4}$")
-
-
-def _walk(o):
-    if isinstance(o, dict):
-        yield o
-        for v in o.values():
-            yield from _walk(v)
-    elif isinstance(o, list):
-        for v in o:
-            yield from _walk(v)
 
 
 def _jumbo_price(prod):
@@ -329,59 +375,65 @@ def _jumbo_price(prod):
     return f(reg), f(promo)
 
 
-def _jumbo_promo_text(prod):
+def _ms_date(v):
+    if isinstance(v, (int, float)) and v > 1e11:
+        return datetime.fromtimestamp(v / 1000, timezone.utc).date().isoformat()
+    return v
+
+
+def _jumbo_promo(prod):
     for key in ("promotion", "promotions"):
         v = prod.get(key)
-        if isinstance(v, list) and v:
-            v = v[0]
+        if isinstance(v, list):
+            v = v[0] if v else None
         if isinstance(v, dict):
             tags = v.get("tags") or []
-            txt = " ".join(t.get("text", "") for t in tags if isinstance(t, dict)) or v.get("name") or v.get("title") or ""
-            return txt.strip(), v.get("toDate") or v.get("endDate") or v.get("validUntil")
-    return "", None
+            txt = " ".join(t.get("text", "") for t in tags if isinstance(t, dict)).strip()
+            txt = txt or v.get("label") or v.get("name") or v.get("title") or ""
+            txt = re.sub(r"^nu\s+", "", txt, flags=re.I)
+            return txt.strip(), _ms_date(v.get("toDate") or v.get("endDate") or v.get("validUntil"))
+    return None, None
 
 
 def fetch_jumbo_bonus():
-    out = {}
+    probe = status.setdefault("probe", {})
     s = requests.Session()
     s.headers.update(JUMBO_HEADERS)
-    last_err = None
-    for ver in ("v17", "v16", "v15"):
+    out, last_err = {}, None
+    for ver in ("v17", "v18", "v19", "v16"):
         base = f"https://mobileapi.jumbo.com/{ver}"
         try:
-            r = s.get(base + "/promotion-overview", timeout=30)
+            r = s.get(base + "/search", params={"offset": 0, "limit": 30, "q": ""}, timeout=30)
+            probe[f"jumbo_{ver}_search"] = r.status_code
             r.raise_for_status()
-            ov = r.json()
-            save_debug("jumbo_promotion_overview", ov)
-            # Productobjecten die direct in het overzicht staan
-            promo_ids = set()
-            for d in _walk(ov):
-                pid = d.get("id")
-                if isinstance(pid, str) and JUMBO_ID.match(pid) and "title" in d:
+            j = r.json()
+            save_debug("jumbo_search", j)
+            total = (j.get("products") or {}).get("total") or 0
+            probe["jumbo_total"] = total
+            limit, offset, scanned = 30, 0, 0
+            while offset < total and offset < 30000:
+                if offset:
+                    r = s.get(base + "/search", params={"offset": offset, "limit": limit, "q": ""}, timeout=30)
+                    if not r.ok:
+                        probe["jumbo_stop"] = [offset, r.status_code]
+                        break
+                    j = r.json()
+                data = (j.get("products") or {}).get("data", [])
+                if not data:
+                    break
+                for d in data:
+                    scanned += 1
+                    txt, until = _jumbo_promo(d)
+                    if txt is None:
+                        continue
                     reg, promo = _jumbo_price(d)
-                    txt, until = _jumbo_promo_text(d)
-                    eff, qty = effective(reg, txt, now_price=promo)
-                    out[pid] = {"t": txt or "Aanbieding", "p": eff, "q": qty, "w": reg, "until": until,
-                                "n": d.get("title"), "s": d.get("quantity")}
-                elif isinstance(pid, (str, int)) and ("promotionId" in d or d.get("type") == "promotion"):
-                    promo_ids.add(str(d.get("promotionId") or pid))
-            # Per actie de producten ophalen
-            for i, prid in enumerate(sorted(promo_ids)[:400]):
-                rr = s.get(base + "/search", params={"promotionId": prid, "limit": 30}, timeout=30)
-                if not rr.ok:
-                    continue
-                j = rr.json()
-                if i == 0:
-                    save_debug("jumbo_promotion_products", j)
-                for d in (j.get("products") or {}).get("data", []):
-                    reg, promo = _jumbo_price(d)
-                    txt, until = _jumbo_promo_text(d)
                     eff, qty = effective(reg, txt, now_price=promo)
                     out[d["id"]] = {"t": txt or "Aanbieding", "p": eff, "q": qty, "w": reg, "until": until,
                                     "n": d.get("title"), "s": d.get("quantity")}
-                time.sleep(0.1)
-            if out:
-                return out
+                offset += limit
+                time.sleep(0.03)
+            probe["jumbo_scanned"] = scanned
+            return out
         except Exception as e:
             last_err = e
             log(f"Jumbo {ver}: {e}")
