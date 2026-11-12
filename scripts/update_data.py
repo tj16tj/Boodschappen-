@@ -405,8 +405,10 @@ def _until(subtitle):
 def parse_jumbo_cards(html):
     """Actiekaarten van jumbo.com/aanbiedingen: id, titel, actietekst, einddatum, link."""
     cards = {}
-    for block in re.split(r'<li class="jum-card card-promotion', html)[1:]:
-        block = block[: block.find("</li>")] if "</li>" in block else block[:6000]
+    for block in re.split(r'<(?:li|article) class="[^"]*card-promotion', html)[1:]:
+        ends = [i for i in (block.find("</li>"), block.find("</article>")) if i > 0]
+        block = block[: min(ends)] if ends else block[:6000]
+        exp = re.search(r'expiration-date="(\d{4}-\d{2}-\d{2})', block)
         href = re.search(r'href="(/aanbiedingen/[^"]+)"', block)
         if not href:
             continue
@@ -415,7 +417,7 @@ def parse_jumbo_cards(html):
         title = re.search(r'class="title-link"[^>]*>(.*?)</a>', block, flags=re.S)
         sub = re.search(r'class="subtitle"[^>]*>(.*?)</p>', block, flags=re.S)
         sub_t = _text(sub.group(1)) if sub else ""
-        cards[href.group(1)] = {"t": tag, "title": _text(title.group(1)) if title else "", "until": _until(sub_t), "period": sub_t}
+        cards[href.group(1)] = {"t": tag, "title": _text(title.group(1)) if title else "", "until": exp.group(1) if exp else _until(sub_t), "period": sub_t}
     return cards
 
 
@@ -426,10 +428,13 @@ def fetch_jumbo_bonus():
     r = s.get("https://www.jumbo.com/aanbiedingen/nu", timeout=60)
     r.raise_for_status()
     cards = parse_jumbo_cards(r.text)
+    # Acties die wel gelinkt zijn maar niet als kaart herkend: later de tekst van de actiepagina zelf halen
+    for href in set(re.findall(r'href="(/aanbiedingen/[a-z0-9-]+/[0-9]+)"', r.text)):
+        cards.setdefault(href, {"t": "", "title": "", "until": None, "period": "", "fromPage": True})
     probe["jumbo_cards"] = len(cards)
     out, pages_ok, first = {}, 0, True
     for href, c in list(cards.items())[:400]:
-        if not c["t"]:
+        if not c["t"] and not c.get("fromPage"):
             continue
         try:
             rr = s.get("https://www.jumbo.com" + href, timeout=60)
@@ -439,9 +444,17 @@ def fetch_jumbo_bonus():
             probe.setdefault("jumbo_page_errors", []).append([href, rr.status_code])
             continue
         if first:
-            (DEBUG / "jumbo_promotion_page.txt").write_text(rr.text[:300_000], encoding="utf-8")
+            (DEBUG / "jumbo_promotion_page.txt").write_text(rr.text[:60_000], encoding="utf-8")
             first = False
         pages_ok += 1
+        if not c["t"]:
+            tags = [_text(t) for t in re.findall(r'data-testid="jum-tag"[^>]*>(.*?)</(?:span|div)>\s*</(?:div|span)>', rr.text, flags=re.S)]
+            tags = [t for t in tags if t and "$" not in t]
+            c["t"] = tags[0] if tags else ""
+            m = re.search(r'loopt van ([^|"]+)', rr.text)
+            c["until"] = _until(m.group(1)) if m else None
+            if not c["t"]:
+                continue
         ids = set(re.findall(r'href="/producten/[^"?#]*?-(\d+[A-Z]{2,4})"', rr.text))
         for pid in ids:
             out[pid] = {"t": c["t"], "p": None, "q": 1, "w": None, "until": c["until"], "title": c["title"]}
