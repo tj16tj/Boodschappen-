@@ -421,14 +421,84 @@ def parse_jumbo_cards(html):
     return cards
 
 
+def nuxt_payload(html):
+    """Leest de __NUXT_DATA__-payload (devalue-formaat) van een Nuxt-pagina uit."""
+    m = re.search(r'<script[^>]*id="__NUXT_DATA__"[^>]*>(.*?)</script>', html, flags=re.S)
+    if not m:
+        return None
+    arr = json.loads(m.group(1))
+    memo = {}
+    wrappers = {"Reactive", "ShallowReactive", "Ref", "ShallowRef", "EmptyRef", "EmptyShallowRef"}
+
+    def res(i):
+        if not isinstance(i, int) or isinstance(i, bool) or i < 0 or i >= len(arr):
+            return i
+        if i in memo:
+            return memo[i]
+        v = arr[i]
+        if isinstance(v, list):
+            if v and isinstance(v[0], str) and v[0] in wrappers:
+                memo[i] = None
+                memo[i] = res(v[1]) if len(v) > 1 else None
+                return memo[i]
+            if v and isinstance(v[0], str) and v[0] in ("Set", "Map", "Date", "null", "undefined", "NaN", "Infinity", "BigInt", "RegExp"):
+                memo[i] = None
+                return None
+            out = []
+            memo[i] = out
+            out.extend(res(x) for x in v)
+            return out
+        if isinstance(v, dict):
+            out = {}
+            memo[i] = out
+            for k, x in v.items():
+                out[k] = res(x)
+            return out
+        memo[i] = v
+        return v
+
+    old = sys.getrecursionlimit()
+    sys.setrecursionlimit(max(old, 20000))
+    try:
+        return res(0)
+    finally:
+        sys.setrecursionlimit(old)
+
+
+def parse_jumbo_nuxt_promotions(html):
+    root = nuxt_payload(html)
+    cards, stack, seen = {}, [root], set()
+    while stack:
+        o = stack.pop()
+        if id(o) in seen:
+            continue
+        seen.add(id(o))
+        if isinstance(o, dict):
+            if o.get("__typename") == "Promotion" and o.get("url"):
+                tags = " ".join(t.get("text", "") for t in (o.get("tags") or []) if isinstance(t, dict)).strip()
+                end = ((o.get("end") or {}).get("iso") or "")[:10] or None
+                cards[o["url"]] = {"t": tags, "title": o.get("title") or "", "until": end,
+                                   "period": (o.get("durationTexts") or {}).get("shortTitle") or ""}
+            stack.extend(o.values())
+        elif isinstance(o, list):
+            stack.extend(o)
+    return cards
+
+
 def fetch_jumbo_bonus():
     probe = status.setdefault("probe", {})
     s = requests.Session()
     s.headers.update(WEB_HEADERS)
     r = s.get("https://www.jumbo.com/aanbiedingen/nu", timeout=60)
     r.raise_for_status()
-    cards = parse_jumbo_cards(r.text)
-    (DEBUG / "jumbo_aanbiedingen_full.txt").write_text(r.text, encoding="utf-8")  # tijdelijk: volledige pagina
+    try:
+        cards = parse_jumbo_nuxt_promotions(r.text)
+    except Exception as e:
+        probe["jumbo_nuxt_error"] = str(e)[:200]
+        cards = {}
+    probe["jumbo_nuxt_promotions"] = len(cards)
+    for href, c in parse_jumbo_cards(r.text).items():
+        cards.setdefault(href, c)
     # Acties die wel gelinkt zijn maar niet als kaart herkend: later de tekst van de actiepagina zelf halen
     for href in set(re.findall(r'href="(/aanbiedingen/[a-z0-9-]+/[0-9]+)"', r.text)):
         cards.setdefault(href, {"t": "", "title": "", "until": None, "period": "", "fromPage": True})
@@ -436,6 +506,8 @@ def fetch_jumbo_bonus():
     out, pages_ok, first = {}, 0, True
     for href, c in list(cards.items())[:400]:
         if not c["t"] and not c.get("fromPage"):
+            continue
+        if re.search(r"alleen online|online spellen", c["t"], flags=re.I):  # je doet boodschappen in de winkel
             continue
         try:
             rr = s.get("https://www.jumbo.com" + href, timeout=60)
