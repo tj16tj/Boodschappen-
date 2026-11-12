@@ -283,7 +283,7 @@ def fetch_ah_bonus():
                         if res:
                             out[res[0]] = res[1]
     except Exception as e:
-        status["errors"].append(f"AH bonuspagina: {e}")
+        status.setdefault("probe", {})["ah_bonuspage"] = str(e)[:200]  # oude route, valt terug op zoeken
         log(traceback.format_exc())
 
     # Route 2: het hele assortiment doorzoeken, per categorie (de zoek-API geeft max ~3000 per vraag)
