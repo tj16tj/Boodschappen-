@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-12T20:00+00:00",
+ "updated": "2026-11-12T20:04+00:00",
  "prices": {
   "ah": 16173,
   "jumbo": 18296
  },
  "bonus": {
   "ah": 2158,
-  "jumbo": 294
+  "jumbo": 1369
  },
  "errors": [
   "AH bonuspagina: 500 Server Error: Internal Server Error for url: https://api.ah.nl/mobile-services/bonuspage/v1/metadata"
@@ -361,98 +361,99 @@
    ]
   },
   "ah_scanned": 28261,
-  "jumbo_cards": 39,
-  "jumbo_pages": 39,
+  "jumbo_nuxt_promotions": 137,
+  "jumbo_cards": 137,
+  "jumbo_pages": 117,
   "jumbo_sample_cards": [
    {
-    "t": "Online spellen spelen 50% korting",
+    "t": "2e halve prijs",
+    "title": "Welke biermerken zijn bij jouw Jumbo in de aanbieding?",
+    "until": "2026-12-30",
+    "period": "wo 4 feb t/m wo 30 dec"
+   },
+   {
+    "t": "voor 13,99 Alleen in de slijterij",
+    "title": "Hooghoudt dubbele graanjenever of Dujardin vieux",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "5,00 korting Alleen in de slijterij",
+    "title": "Johnnie Walker whisky, Tanqueray gin of Ciroc vodka",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "1,09 per 500 gram Alleen in de winkel",
+    "title": "Broccoli",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "1,69 per kilo Alleen in de winkel",
+    "title": "Conference peren",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "2,79 per 500 gram Alleen in de winkel",
+    "title": "Zespri kiwi Sungold",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "2,49 per kilo Alleen in de winkel",
+    "title": "Alle Kanzi appels",
+    "until": "2026-11-17",
+    "period": "wo 11 t/m di 17 nov"
+   },
+   {
+    "t": "29,99 OP=OP",
+    "title": "Braadpan Gietijzer",
+    "until": "2026-11-24",
+    "period": "wo 11 t/m di 24 nov"
+   },
+   {
+    "t": "14,99 OP=OP",
+    "title": "Braadpan Gietijzer",
+    "until": "2026-11-24",
+    "period": "wo 11 t/m di 24 nov"
+   },
+   {
+    "t": "1+1 gratis",
+    "title": "Afprijzing Halloween",
+    "until": "2026-11-15",
+    "period": "wo 4 t/m zo 15 nov"
+   },
+   {
+    "t": "2+1 gratis Alleen in de winkel",
+    "title": "HEMA handdoeken",
+    "until": "2026-11-17",
+    "period": "wo 4 t/m di 17 nov"
+   },
+   {
+    "t": "1+1 gratis",
+    "title": "HEMA sfeerlichten",
+    "until": "2026-11-17",
+    "period": "wo 4 t/m di 17 nov"
+   },
+   {
+    "t": "30% korting",
+    "title": "Tefal x HEMA hapjes- of koekenpan",
+    "until": "2026-11-17",
+    "period": "wo 4 t/m di 17 nov"
+   },
+   {
+    "t": "50% korting Online spellen spelen",
     "title": "Samen spellen spelen",
     "until": "2027-01-05",
     "period": "wo 4 nov t/m di 5 jan"
    },
    {
-    "t": "voor 9,99",
-    "title": "Page Compleet Schoon, Kussenzacht of Sensitive",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "2 voor 6,99",
-    "title": "Jumbo's Dolce Gusto",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "1+1 gratis",
-    "title": "Alle Easy Chicken Tonight of Easy Asia Tonight",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "1+1 gratis",
-    "title": "Alle Jumbo wokgroenten zak à 400 gram of Jumbo's woksauzen",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "2 voor 2,99",
-    "title": "Croky",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "2 voor 3,99",
-    "title": "Beemster",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "voor 0,99",
-    "title": "Rucola, veldsla of melanges",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "25% korting",
-    "title": "Leffe of Kasteelbier",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "25% korting",
-    "title": "Speciaalbieren van Grolsch, Grolsch Radler of Grimbergen",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "voor 4,99",
-    "title": "Los Gansos",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "2 voor 3,99",
-    "title": "Heinz of Wijko sauzen",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "voor 1,29",
-    "title": "Mandarijnen",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "voor 1,49",
-    "title": "Mango",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "voor 3,49",
-    "title": "Blauwe bessen",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
+    "t": "30% korting Alleen online",
+    "title": "Neutral",
+    "until": "2026-12-08",
+    "period": "wo 17 jun t/m di 8 dec"
    }
   ]
  }
