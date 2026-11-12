@@ -1,20 +1,406 @@
 {
- "updated": "2026-11-12T19:42+00:00",
+ "updated": "2026-11-12T19:50+00:00",
  "prices": {
   "ah": 16173,
   "jumbo": 18296
  },
  "bonus": {
-  "ah": 0,
+  "ah": 12704,
   "jumbo": 0
  },
  "errors": [
   "AH bonuspagina: 500 Server Error: Internal Server Error for url: https://api.ah.nl/mobile-services/bonuspage/v1/metadata",
-  "AH assortiment: 404 Client Error: Not Found for url: https://api.ah.nl/mobile-services/v1/product-shelves/categories",
-  "Jumbo aanbiedingen: 404 Client Error: Not Found for url: https://mobileapi.jumbo.com/v16/search?offset=0&limit=30&q=",
-  "ah: vorige bonus aangehouden (1233)"
+  "Jumbo aanbiedingen: 404 Client Error: Not Found for url: https://mobileapi.jumbo.com/v16/search?offset=0&limit=30&q="
  ],
  "probe": {
+  "ah_categories_status": 404,
+  "ah_variant": null,
+  "ah_cover": {
+   "melk": [
+    970,
+    970
+   ],
+   "kaas": [
+    1638,
+    1638
+   ],
+   "vlees": [
+    2527,
+    2527
+   ],
+   "kip": [
+    1067,
+    1067
+   ],
+   "gehakt": [
+    317,
+    317
+   ],
+   "brood": [
+    666,
+    666
+   ],
+   "groente": [
+    1426,
+    1426
+   ],
+   "fruit": [
+    1619,
+    1619
+   ],
+   "aardappel": [
+    209,
+    209
+   ],
+   "tomaat": [
+    236,
+    236
+   ],
+   "appel": [
+    697,
+    697
+   ],
+   "banaan": [
+    150,
+    150
+   ],
+   "sla": [
+    45,
+    45
+   ],
+   "pasta": [
+    885,
+    885
+   ],
+   "rijst": [
+    259,
+    259
+   ],
+   "saus": [
+    1220,
+    1220
+   ],
+   "chips": [
+    382,
+    382
+   ],
+   "koek": [
+    984,
+    984
+   ],
+   "chocolade": [
+    1437,
+    1437
+   ],
+   "snoep": [
+    901,
+    901
+   ],
+   "drop": [
+    184,
+    184
+   ],
+   "noten": [
+    558,
+    558
+   ],
+   "bier": [
+    857,
+    857
+   ],
+   "wijn": [
+    1719,
+    1719
+   ],
+   "frisdrank": [
+    994,
+    994
+   ],
+   "cola": [
+    216,
+    216
+   ],
+   "sap": [
+    238,
+    238
+   ],
+   "water": [
+    537,
+    537
+   ],
+   "koffie": [
+    764,
+    764
+   ],
+   "thee": [
+    348,
+    348
+   ],
+   "yoghurt": [
+    461,
+    461
+   ],
+   "kwark": [
+    142,
+    142
+   ],
+   "vla": [
+    82,
+    82
+   ],
+   "boter": [
+    387,
+    387
+   ],
+   "room": [
+    641,
+    641
+   ],
+   "eieren": [
+    656,
+    656
+   ],
+   "ijs": [
+    334,
+    334
+   ],
+   "pizza": [
+    232,
+    232
+   ],
+   "diepvries": [
+    1233,
+    1233
+   ],
+   "friet": [
+    49,
+    49
+   ],
+   "shampoo": [
+    361,
+    361
+   ],
+   "douche": [
+    424,
+    424
+   ],
+   "deo": [
+    50,
+    50
+   ],
+   "tandpasta": [
+    345,
+    345
+   ],
+   "scheer": [
+    157,
+    157
+   ],
+   "wasmiddel": [
+    453,
+    453
+   ],
+   "afwas": [
+    81,
+    81
+   ],
+   "schoonmaak": [
+    566,
+    566
+   ],
+   "papier": [
+    93,
+    93
+   ],
+   "soep": [
+    830,
+    830
+   ],
+   "bouillon": [
+    95,
+    95
+   ],
+   "kruiden": [
+    770,
+    770
+   ],
+   "olie": [
+    368,
+    368
+   ],
+   "mayonaise": [
+    115,
+    115
+   ],
+   "salade": [
+    326,
+    326
+   ],
+   "vis": [
+    628,
+    628
+   ],
+   "zalm": [
+    293,
+    293
+   ],
+   "worst": [
+    610,
+    610
+   ],
+   "ham": [
+    112,
+    112
+   ],
+   "salami": [
+    120,
+    120
+   ],
+   "beleg": [
+    1398,
+    1398
+   ],
+   "pindakaas": [
+    155,
+    155
+   ],
+   "jam": [
+    71,
+    71
+   ],
+   "hagelslag": [
+    64,
+    64
+   ],
+   "ontbijt": [
+    522,
+    522
+   ],
+   "muesli": [
+    173,
+    173
+   ],
+   "cracker": [
+    200,
+    200
+   ],
+   "baby": [
+    1270,
+    1270
+   ],
+   "luiers": [
+    284,
+    284
+   ],
+   "kat": [
+    92,
+    92
+   ],
+   "hond": [
+    354,
+    354
+   ],
+   "vega": [
+    7253,
+    10000
+   ],
+   "tofu": [
+    14,
+    14
+   ],
+   "wraps": [
+    76,
+    76
+   ],
+   "noodles": [
+    151,
+    151
+   ],
+   "mexicaans": [
+    234,
+    234
+   ],
+   "italiaans": [
+    1012,
+    1012
+   ],
+   "aziatisch": [
+    755,
+    755
+   ],
+   "taart": [
+    129,
+    129
+   ],
+   "cake": [
+    181,
+    181
+   ],
+   "gebak": [
+    170,
+    170
+   ],
+   "vers": [
+    2886,
+    2886
+   ],
+   "maaltijd": [
+    1397,
+    1397
+   ],
+   "snack": [
+    830,
+    830
+   ],
+   "borrel": [
+    1138,
+    1138
+   ],
+   "nootjes": [
+    352,
+    352
+   ]
+  },
+  "ah_scanned": 28261,
+  "jumbo_explore": {
+   "https://mobileapi.jumbo.com/v17/search?q=melk&limit=5": {
+    "error": "HTTPSConnectionPool(host='mobileapi.jumbo.com', port=443): Read timed out. (read timeout=30)"
+   },
+   "https://mobileapi.jumbo.com/v17/products?q=melk&limit=5": {
+    "error": "HTTPSConnectionPool(host='mobileapi.jumbo.com', port=443): Read timed out. (read timeout=30)"
+   },
+   "https://mobileapi.jumbo.com/v17/categories": {
+    "error": "HTTPSConnectionPool(host='mobileapi.jumbo.com', port=443): Read timed out. (read timeout=30)"
+   },
+   "https://mobileapi.jumbo.com/": {
+    "error": "HTTPSConnectionPool(host='mobileapi.jumbo.com', port=443): Read timed out. (read timeout=30)"
+   },
+   "https://www.jumbo.com/aanbiedingen/nu": {
+    "status": 200,
+    "len": 876724,
+    "start": "<!DOCTYPE html><html  lang=\"nl-NL\" dir=\"ltr\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Aanbiedingen | Nu in de aanbieding | Jumbo</title><script type=\"text/javascript\">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n      new Da",
+    "markers": [
+     "__NUXT__",
+     "promotion",
+     "graphql"
+    ]
+   },
+   "https://www.jumbo.com/producten/?searchType=keyword&searchTerms=melk": {
+    "status": 200,
+    "len": 907926,
+    "start": "<!DOCTYPE html><html  lang=\"nl-NL\" dir=\"ltr\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Melk kopen &amp; bestellen | Jumbo</title><script type=\"text/javascript\">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n      new Date().get",
+    "markers": [
+     "__NUXT__",
+     "promotion",
+     "graphql"
+    ]
+   },
+   "https://www.jumbo.com/api/graphql": {
+    "status": 401,
+    "len": 48,
+    "start": "{\"errors\":[{\"message\":\"No client headers set\"}]}"
+   }
+  },
   "jumbo_v17_search": 404,
   "jumbo_v18_search": 404,
   "jumbo_v19_search": 404,

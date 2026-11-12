@@ -1,0 +1,1627 @@
+{
+ "page": {
+  "size": 5,
+  "totalElements": 970,
+  "totalPages": 194,
+  "number": 0
+ },
+ "links": {
+  "first": {
+   "href": "https://ms.ah.nl:8080/mobile-services/product/search/v2?application=AHWEBSHOP&availableOnline=true&bonus=NONE&orderable=any&query=melk&sortBy=RELEVANCE&page=0&size=5"
+  },
+  "current": {
+   "href": "https://ms.ah.nl:8080/mobile-services/product/search/v2?application=AHWEBSHOP&availableOnline=true&bonus=NONE&orderable=any&query=melk&sortBy=RELEVANCE&page=0&size=5"
+  },
+  "next": {
+   "href": "https://ms.ah.nl:8080/mobile-services/product/search/v2?application=AHWEBSHOP&availableOnline=true&bonus=NONE&orderable=any&query=melk&sortBy=RELEVANCE&page=1&size=5"
+  },
+  "prev": null,
+  "last": {
+   "href": "https://ms.ah.nl:8080/mobile-services/product/search/v2?application=AHWEBSHOP&availableOnline=true&bonus=NONE&orderable=any&query=melk&sortBy=RELEVANCE&page=193&size=5"
+  }
+ },
+ "filters": [
+  {
+   "id": "brand",
+   "allLabel": null,
+   "label": "Merk",
+   "options": [
+    {
+     "id": "AH",
+     "label": "AH",
+     "count": 146,
+     "display": true
+    },
+    {
+     "id": "AH Biologisch",
+     "label": "AH Biologisch",
+     "count": 32,
+     "display": true
+    },
+    {
+     "id": "AH Terra",
+     "label": "AH Terra",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Alpro",
+     "label": "Alpro",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Arla",
+     "label": "Arla",
+     "count": 29,
+     "display": true
+    },
+    {
+     "id": "Aroy-D",
+     "label": "Aroy-D",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Betsie's",
+     "label": "Betsie's",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Blue Home",
+     "label": "Blue Home",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Boeren van Amstel",
+     "label": "Boeren van Amstel",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Bolletje",
+     "label": "Bolletje",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Bongastate",
+     "label": "Bongastate",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Bounty",
+     "label": "Bounty",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Bros",
+     "label": "Bros",
+     "count": 4,
+     "display": true
+    },
+    {
+     "id": "Caffè Gondoliere",
+     "label": "Caffè Gondoliere",
+     "count": 4,
+     "display": true
+    },
+    {
+     "id": "Campina",
+     "label": "Campina",
+     "count": 44,
+     "display": true
+    },
+    {
+     "id": "Claro",
+     "label": "Claro",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Céréal",
+     "label": "Céréal",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Côte d'Or",
+     "label": "Côte d'Or",
+     "count": 10,
+     "display": true
+    },
+    {
+     "id": "Daelmans",
+     "label": "Daelmans",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "De Ruijter",
+     "label": "De Ruijter",
+     "count": 6,
+     "display": true
+    },
+    {
+     "id": "De Zaanse Hoeve",
+     "label": "De Zaanse Hoeve",
+     "count": 3,
+     "display": true
+    },
+    {
+     "id": "Delicata",
+     "label": "Delicata",
+     "count": 147,
+     "display": true
+    },
+    {
+     "id": "Den Eelder",
+     "label": "Den Eelder",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Douwe Egberts",
+     "label": "Douwe Egberts",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "Edet",
+     "label": "Edet",
+     "count": 3,
+     "display": true
+    },
+    {
+     "id": "Elke Melk",
+     "label": "Elke Melk",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Etos",
+     "label": "Etos",
+     "count": 4,
+     "display": true
+    },
+    {
+     "id": "Fairtrade Original",
+     "label": "Fairtrade Original",
+     "count": 4,
+     "display": true
+    },
+    {
+     "id": "Felix",
+     "label": "Felix",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "Ferrero",
+     "label": "Ferrero",
+     "count": 4,
+     "display": true
+    },
+    {
+     "id": "Franui",
+     "label": "Franui",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Friesche Vlag",
+     "label": "Friesche Vlag",
+     "count": 11,
+     "display": true
+    },
+    {
+     "id": "Galler",
+     "label": "Galler",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Go-Tan",
+     "label": "Go-Tan",
+     "count": 3,
+     "display": true
+    },
+    {
+     "id": "HG",
+     "label": "HG",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Hands Off",
+     "label": "Hands Off",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "Hero",
+     "label": "Hero",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Hero Nutrasense",
+     "label": "Hero Nutrasense",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "Hipp",
+     "label": "Hipp",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "Holland Jersey",
+     "label": "Holland Jersey",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Inventum",
+     "label": "Inventum",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Jacques",
+     "label": "Jacques",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Kalverliefde",
+     "label": "Kalverliefde",
+     "count": 4,
+     "display": true
+    },
+    {
+     "id": "Kellogg's",
+     "label": "Kellogg's",
+     "count": 3,
+     "display": true
+    },
+    {
+     "id": "Kinder",
+     "label": "Kinder",
+     "count": 3,
+     "display": true
+    },
+    {
+     "id": "Kitkat",
+     "label": "Kitkat",
+     "count": 27,
+     "display": true
+    },
+    {
+     "id": "Knoppers",
+     "label": "Knoppers",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Koetjesreep",
+     "label": "Koetjesreep",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "LU",
+     "label": "LU",
+     "count": 8,
+     "display": true
+    },
+    {
+     "id": "Liga",
+     "label": "Liga",
+     "count": 12,
+     "display": true
+    },
+    {
+     "id": "Lindt",
+     "label": "Lindt",
+     "count": 10,
+     "display": true
+    },
+    {
+     "id": "Lion",
+     "label": "Lion",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "Lonka",
+     "label": "Lonka",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Lotus Biscoff",
+     "label": "Lotus Biscoff",
+     "count": 3,
+     "display": true
+    },
+    {
+     "id": "M&M'S",
+     "label": "M&M'S",
+     "count": 12,
+     "display": true
+    },
+    {
+     "id": "Maltesers",
+     "label": "Maltesers",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "McVitie's",
+     "label": "McVitie's",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Medela",
+     "label": "Medela",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Melkmeisje",
+     "label": "Melkmeisje",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Melkunie",
+     "label": "Melkunie",
+     "count": 93,
+     "display": true
+    },
+    {
+     "id": "Merci",
+     "label": "Merci",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Meurisse",
+     "label": "Meurisse",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Mijn Melk",
+     "label": "Mijn Melk",
+     "count": 4,
+     "display": true
+    },
+    {
+     "id": "Milka",
+     "label": "Milka",
+     "count": 49,
+     "display": true
+    },
+    {
+     "id": "Miskets",
+     "label": "Miskets",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "NIVEA",
+     "label": "NIVEA",
+     "count": 8,
+     "display": true
+    },
+    {
+     "id": "Nature's Charm",
+     "label": "Nature's Charm",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Nescafé",
+     "label": "Nescafé",
+     "count": 12,
+     "display": true
+    },
+    {
+     "id": "Nestlé",
+     "label": "Nestlé",
+     "count": 21,
+     "display": true
+    },
+    {
+     "id": "Nocciolata",
+     "label": "Nocciolata",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Nutrilon",
+     "label": "Nutrilon",
+     "count": 36,
+     "display": true
+    },
+    {
+     "id": "Nuts",
+     "label": "Nuts",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Oreo",
+     "label": "Oreo",
+     "count": 3,
+     "display": true
+    },
+    {
+     "id": "OriNoko",
+     "label": "OriNoko",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Palmolive",
+     "label": "Palmolive",
+     "count": 7,
+     "display": true
+    },
+    {
+     "id": "Perla Huisblends",
+     "label": "Perla Huisblends",
+     "count": 3,
+     "display": true
+    },
+    {
+     "id": "Pure Goat",
+     "label": "Pure Goat",
+     "count": 2,
+     "display": true
+    },
+    {
+     "id": "Ritter Sport",
+     "label": "Ritter Sport",
+     "count": 7,
+     "display": true
+    },
+    {
+     "id": "Rolo",
+     "label": "Rolo",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Smarties",
+     "label": "Smarties",
+     "count": 9,
+     "display": true
+    },
+    {
+     "id": "Sultana",
+     "label": "Sultana",
+     "count": 26,
+     "display": true
+    },
+    {
+     "id": "Toblerone",
+     "label": "Toblerone",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Tony's Chocolonely",
+     "label": "Tony's Chocolonely",
+     "count": 34,
+     "display": true
+    },
+    {
+     "id": "Trü Frü",
+     "label": "Trü Frü",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Two Cows",
+     "label": "Two Cows",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Urban Cacao",
+     "label": "Urban Cacao",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Valle del sole",
+     "label": "Valle del sole",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Van Delft",
+     "label": "Van Delft",
+     "count": 3,
+     "display": true
+    },
+    {
+     "id": "Venz",
+     "label": "Venz",
+     "count": 4,
+     "display": true
+    },
+    {
+     "id": "Verkade",
+     "label": "Verkade",
+     "count": 23,
+     "display": true
+    },
+    {
+     "id": "Weleda",
+     "label": "Weleda",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Whiskas",
+     "label": "Whiskas",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Zarqa",
+     "label": "Zarqa",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "Zonnatura",
+     "label": "Zonnatura",
+     "count": 1,
+     "display": true
+    }
+   ],
+   "type": "BRAND",
+   "booleanFilter": false
+  },
+  {
+   "id": "taxonomy",
+   "allLabel": null,
+   "label": "Soort",
+   "options": [
+    {
+     "id": "5900",
+     "label": "0-6 maanden (zuigelingenvoeding)",
+     "count": 6,
+     "display": true
+    },
+    {
+     "id": "10206",
+     "label": "Aziatische keuken",
+     "count": 22,
+     "display": true
+    },
+    {
+     "id": "10299",
+     "label": "Bakproducten",
+     "count": 4,
+     "display": true
+    },
+    {
+     "id": "11640",
+     "label": "Biscuits",
+     "count": 47,
+     "display": true
+    },
+    {
+     "id": "4114",
+     "label": "Candybars",
+     "count": 28,
+     "display": true
+    },
+    {
+     "id": "4115",
+     "label": "Candybars minis",
+     "count": 22,
+     "display": true
+    },
+    {
+     "id": "1855",
+     "label": "Candybars multipack",
+     "count": 6,
+     "display": true
+    },
+    {
+     "id": "998",
+     "label": "Chocolade",
+     "count": 366,
+     "display": true
+    },
+    {
+     "id": "1854",
+     "label": "Chocolade bites",
+     "count": 34,
+     "display": true
+    },
+    {
+     "id": "10719",
+     "label": "Chocoladeletters",
+     "count": 56,
+     "display": true
+    },
+    {
+     "id": "3681",
+     "label": "Chocoladeletters melk",
+     "count": 56,
+     "display": true
+    },
+    {
+     "id": "18279",
+     "label": "Chocolademelk",
+     "count": 17,
+     "display": true
+    },
+    {
+     "id": "4105",
+     "label": "Chocoladepasta",
+     "count": 13,
+     "display": true
+    },
+    {
+     "id": "8741",
+     "label": "Chocoladerepen met biscuit",
+     "count": 28,
+     "display": true
+    },
+    {
+     "id": "8740",
+     "label": "Chocoladerepen met noten",
+     "count": 56,
+     "display": true
+    },
+    {
+     "id": "8742",
+     "label": "Chocoladerepen met vulling, praliné",
+     "count": 26,
+     "display": true
+    },
+    {
+     "id": "1544",
+     "label": "Creme fraiche, room, kokosmelk",
+     "count": 22,
+     "display": true
+    },
+    {
+     "id": "20724",
+     "label": "Dreumes- en peutervoeding",
+     "count": 34,
+     "display": true
+    },
+    {
+     "id": "5903",
+     "label": "Dreumesmelk vanaf 12 maanden",
+     "count": 19,
+     "display": true
+    },
+    {
+     "id": "8304",
+     "label": "Drinkpakjes",
+     "count": 8,
+     "display": true
+    },
+    {
+     "id": "20879",
+     "label": "Drinkyoghurt, chocolademelk, ontbijtdranken",
+     "count": 17,
+     "display": true
+    },
+    {
+     "id": "2025",
+     "label": "Droogvoer kat",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "1973",
+     "label": "Flesvoeding",
+     "count": 76,
+     "display": true
+    },
+    {
+     "id": "2537",
+     "label": "Fruitbiscuit en melkbiscuit",
+     "count": 44,
+     "display": true
+    },
+    {
+     "id": "2431",
+     "label": "Gezichtsreiniging",
+     "count": 11,
+     "display": true
+    },
+    {
+     "id": "1163",
+     "label": "Gezichtsreiniging vrouwen",
+     "count": 11,
+     "display": true
+    },
+    {
+     "id": "11523",
+     "label": "Gezichtsverzorging",
+     "count": 11,
+     "display": true
+    },
+    {
+     "id": "11917",
+     "label": "Hagelslag",
+     "count": 23,
+     "display": true
+    },
+    {
+     "id": "2390",
+     "label": "Halfvolle melk",
+     "count": 27,
+     "display": true
+    },
+    {
+     "id": "11524",
+     "label": "Handverzorging",
+     "count": 6,
+     "display": true
+    },
+    {
+     "id": "20839",
+     "label": "Havermout, pap, granen",
+     "count": 21,
+     "display": true
+    },
+    {
+     "id": "20864",
+     "label": "Hazelnootpasta, chocoladepasta",
+     "count": 14,
+     "display": true
+    },
+    {
+     "id": "18264",
+     "label": "High protein",
+     "count": 37,
+     "display": true
+    },
+    {
+     "id": "19582",
+     "label": "High protein drinks",
+     "count": 19,
+     "display": true
+    },
+    {
+     "id": "18272",
+     "label": "High protein tussendoortjes",
+     "count": 34,
+     "display": true
+    },
+    {
+     "id": "19579",
+     "label": "High protein yoghurt tussendoortjes",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "5923",
+     "label": "Houdbare melk",
+     "count": 47,
+     "display": true
+    },
+    {
+     "id": "1177",
+     "label": "Indonesische keuken",
+     "count": 22,
+     "display": true
+    },
+    {
+     "id": "2394",
+     "label": "Karnemelk",
+     "count": 15,
+     "display": true
+    },
+    {
+     "id": "2023",
+     "label": "Katten",
+     "count": 8,
+     "display": true
+    },
+    {
+     "id": "3981",
+     "label": "Kerst chocolade",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "44960",
+     "label": "Kerst zoetigheden",
+     "count": 5,
+     "display": true
+    },
+    {
+     "id": "1246",
+     "label": "Koek",
+     "count": 84,
+     "display": true
+    },
+    {
+     "id": "2152",
+     "label": "Koekjes met chocolade",
+     "count": 24,
+     "display": true
+    },
+    {
+     "id": "10135",
+     "label": "Koffiemelk",
+     "count": 16,
+     "display": true
+    },
+    {
+     "id": "2765",
+     "label": "Koffiemelk, koffieroom, koffiecreamer",
+     "count": 16,
+     "display": true
+    },
+    {
+     "id": "10368",
+     "label": "Kokosmelk",
+     "count": 22,
+     "display": true
+    },
+    {
+     "id": "10118",
+     "label": "Lactosevrije melk",
+     "count": 15,
+     "display": true
+    },
+    {
+     "id": "18282",
+     "label": "Lactosevrije zuivel",
+     "count": 15,
+     "display": true
+    },
+    {
+     "id": "11540",
+     "label": "Lichaamsverzorging",
+     "count": 9,
+     "display": true
+    },
+    {
+     "id": "8724",
+     "label": "Luxe chocolade",
+     "count": 7,
+     "display": true
+    },
+    {
+     "id": "11916",
+     "label": "Maiswafels",
+     "count": 6,
+     "display": true
+    },
+    {
+     "id": "1319",
+     "label": "Melk",
+     "count": 137,
+     "display": true
+    },
+    {
+     "id": "10170",
+     "label": "Melk drinkpakjes",
+     "count": 8,
+     "display": true
+    },
+    {
+     "id": "20725",
+     "label": "Melk, pap (dreumes en peuter)",
+     "count": 33,
+     "display": true
+    },
+    {
+     "id": "1853",
+     "label": "Melkchocolade",
+     "count": 33,
+     "display": true
+    },
+    {
+     "id": "8726",
+     "label": "Melkchocolade met biscuit",
+     "count": 28,
+     "display": true
+    },
+    {
+     "id": "8725",
+     "label": "Melkchocolade met noten",
+     "count": 56,
+     "display": true
+    },
+    {
+     "id": "10383",
+     "label": "Melkchocolade met smaak",
+     "count": 82,
+     "display": true
+    },
+    {
+     "id": "7964",
+     "label": "Melkchocolade repen",
+     "count": 200,
+     "display": true
+    },
+    {
+     "id": "1019",
+     "label": "Ontbijtgranen",
+     "count": 24,
+     "display": true
+    },
+    {
+     "id": "2115",
+     "label": "Oploskoffie",
+     "count": 24,
+     "display": true
+    },
+    {
+     "id": "2116",
+     "label": "Oploskoffie (melkbasis)",
+     "count": 24,
+     "display": true
+    },
+    {
+     "id": "5185",
+     "label": "Pap",
+     "count": 21,
+     "display": true
+    },
+    {
+     "id": "10565",
+     "label": "Pepernoten, kruidnoten",
+     "count": 7,
+     "display": true
+    },
+    {
+     "id": "5904",
+     "label": "Peutermelk vanaf 2 jaar",
+     "count": 8,
+     "display": true
+    },
+    {
+     "id": "5905",
+     "label": "Peutermelk vanaf 3 jaar",
+     "count": 6,
+     "display": true
+    },
+    {
+     "id": "8729",
+     "label": "Repen en tabletten",
+     "count": 226,
+     "display": true
+    },
+    {
+     "id": "1452",
+     "label": "Rijstwafels, maiswafels, linzenwafels",
+     "count": 7,
+     "display": true
+    },
+    {
+     "id": "43785",
+     "label": "Sinterklaas chocolade",
+     "count": 8,
+     "display": true
+    },
+    {
+     "id": "1839",
+     "label": "Snoep",
+     "count": 30,
+     "display": true
+    },
+    {
+     "id": "1132",
+     "label": "Strooisels",
+     "count": 27,
+     "display": true
+    },
+    {
+     "id": "4434",
+     "label": "Thaise keuken",
+     "count": 22,
+     "display": true
+    },
+    {
+     "id": "10400",
+     "label": "Toevoegingen, toppings, versiering",
+     "count": 4,
+     "display": true
+    },
+    {
+     "id": "10882",
+     "label": "Trakteren",
+     "count": 22,
+     "display": true
+    },
+    {
+     "id": "5902",
+     "label": "Vanaf 10 maanden (opvolgmelk)",
+     "count": 6,
+     "display": true
+    },
+    {
+     "id": "5901",
+     "label": "Vanaf 6 maanden (opvolgmelk)",
+     "count": 31,
+     "display": true
+    },
+    {
+     "id": "1659",
+     "label": "Vanillevla",
+     "count": 6,
+     "display": true
+    },
+    {
+     "id": "18273",
+     "label": "Vla",
+     "count": 9,
+     "display": true
+    },
+    {
+     "id": "2331",
+     "label": "Vla en pap",
+     "count": 30,
+     "display": true
+    },
+    {
+     "id": "1966",
+     "label": "Vloeibare zeep",
+     "count": 6,
+     "display": true
+    },
+    {
+     "id": "2392",
+     "label": "Volle melk",
+     "count": 21,
+     "display": true
+    },
+    {
+     "id": "20878",
+     "label": "Yoghurt en skyr",
+     "count": 36,
+     "display": true
+    },
+    {
+     "id": "5148",
+     "label": "Yoghurt tussendoortjes",
+     "count": 34,
+     "display": true
+    },
+    {
+     "id": "962",
+     "label": "Zoet beleg",
+     "count": 41,
+     "display": true
+    },
+    {
+     "id": "17859",
+     "label": "Zuivel tussendoortjes",
+     "count": 34,
+     "display": true
+    }
+   ],
+   "type": "TAXONOMY",
+   "booleanFilter": false
+  },
+  {
+   "id": "intolerance",
+   "allLabel": null,
+   "label": "Allergie",
+   "options": [
+    {
+     "id": "sp_include_intolerance_geen_eieren",
+     "label": "eieren",
+     "count": 405,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_gluten",
+     "label": "gluten",
+     "count": 298,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_lactose",
+     "label": "lactose",
+     "count": 33,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_lupine",
+     "label": "lupine",
+     "count": 510,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_melk",
+     "label": "melk",
+     "count": 24,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_mosterd",
+     "label": "mosterd",
+     "count": 512,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_noten",
+     "label": "noten",
+     "count": 269,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_pindas",
+     "label": "pinda's",
+     "count": 323,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_schelpdieren",
+     "label": "schelpdieren",
+     "count": 513,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_selderij",
+     "label": "selderij",
+     "count": 514,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_sesam",
+     "label": "sesam",
+     "count": 498,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_soja",
+     "label": "soja",
+     "count": 209,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_sulfiet",
+     "label": "sulfiet",
+     "count": 513,
+     "display": true
+    },
+    {
+     "id": "sp_include_intolerance_geen_vis",
+     "label": "vis",
+     "count": 497,
+     "display": true
+    }
+   ],
+   "type": "PROPERTY",
+   "booleanFilter": false
+  },
+  {
+   "id": "diet",
+   "allLabel": null,
+   "label": "Dieet",
+   "options": [
+    {
+     "id": "sp_include_dieet_laag_suiker",
+     "label": "Laag suiker",
+     "count": 31,
+     "display": true
+    },
+    {
+     "id": "sp_include_dieet_laag_vet",
+     "label": "Laag vet",
+     "count": 78,
+     "display": true
+    },
+    {
+     "id": "sp_include_dieet_laag_zout",
+     "label": "Laag zout",
+     "count": 390,
+     "display": true
+    },
+    {
+     "id": "sp_include_dieet_veganistisch",
+     "label": "Veganistisch",
+     "count": 38,
+     "display": true
+    },
+    {
+     "id": "sp_include_dieet_vegetarisch",
+     "label": "Vegetarisch",
+     "count": 409,
+     "display": true
+    }
+   ],
+   "type": "PROPERTY",
+   "booleanFilter": false
+  },
+  {
+   "id": "nutriscore",
+   "allLabel": null,
+   "label": "Nutri-Score",
+   "options": [
+    {
+     "id": "a",
+     "label": "Score A",
+     "count": 1,
+     "display": true
+    },
+    {
+     "id": "b",
+     "label": "Score B",
+     "count": 58,
+     "display": true
+    },
+    {
+     "id": "c",
+     "label": "Score C",
+     "count": 80,
+     "display": true
+    },
+    {
+     "id": "d",
+     "label": "Score D",
+     "count": 45,
+     "display": true
+    },
+    {
+     "id": "e",
+     "label": "Score E",
+     "count": 295,
+     "display": true
+    },
+    {
+     "id": "n-a",
+     "label": "Score N/A",
+     "count": 2,
+     "display": true
+    }
+   ],
+   "type": "NUTRISCORE",
+   "booleanFilter": false
+  },
+  {
+   "id": "bonus",
+   "allLabel": null,
+   "label": "Bonus",
+   "options": [
+    {
+     "id": "Bonus",
+     "label": "Bonus",
+     "count": 419,
+     "display": true
+    }
+   ],
+   "type": "BONUS",
+   "booleanFilter": true
+  },
+  {
+   "id": "np_biologisch",
+   "allLabel": null,
+   "label": "Biologisch",
+   "options": [
+    {
+     "id": "np_biologisch",
+     "label": "Biologisch",
+     "count": 51,
+     "display": true
+    }
+   ],
+   "type": "PROPERTY",
+   "booleanFilter": true
+  },
+  {
+   "id": "np_goedkoopje",
+   "allLabel": null,
+   "label": "Prijsfavoriet",
+   "options": [
+    {
+     "id": "np_goedkoopje",
+     "label": "Prijsfavoriet",
+     "count": 44,
+     "display": true
+    }
+   ],
+   "type": "PROPERTY",
+   "booleanFilter": true
+  },
+  {
+   "id": "np_lokaal",
+   "allLabel": null,
+   "label": "Uit Nederland",
+   "options": [
+    {
+     "id": "np_lokaal",
+     "label": "Uit Nederland",
+     "count": 21,
+     "display": true
+    }
+   ],
+   "type": "PROPERTY",
+   "booleanFilter": true
+  },
+  {
+   "id": "np_nieuw",
+   "allLabel": null,
+   "label": "Nieuw",
+   "options": [
+    {
+     "id": "np_nieuw",
+     "label": "Nieuw",
+     "count": 4,
+     "display": true
+    }
+   ],
+   "type": "PROPERTY",
+   "booleanFilter": true
+  },
+  {
+   "id": "diepvries",
+   "allLabel": null,
+   "label": "Diepvries",
+   "options": [
+    {
+     "id": "diepvries",
+     "label": "Diepvries",
+     "count": 2,
+     "display": true
+    }
+   ],
+   "type": "PROPERTY",
+   "booleanFilter": true
+  },
+  {
+   "id": "sp_include_dieet_vegetarisch",
+   "allLabel": null,
+   "label": "Vegetarisch",
+   "options": [
+    {
+     "id": "sp_include_dieet_vegetarisch",
+     "label": "Vegetarisch",
+     "count": 409,
+     "display": true
+    }
+   ],
+   "type": "PROPERTY",
+   "booleanFilter": true
+  },
+  {
+   "id": "sp_include_dieet_veganistisch",
+   "allLabel": null,
+   "label": "Veganistisch",
+   "options": [
+    {
+     "id": "sp_include_dieet_veganistisch",
+     "label": "Veganistisch",
+     "count": 38,
+     "display": true
+    }
+   ],
+   "type": "PROPERTY",
+   "booleanFilter": true
+  }
+ ],
+ "sortOn": [
+  "RELEVANCE",
+  "PRICEHIGHLOW",
+  "PRICELOWHIGH",
+  "TAXONOMY",
+  "PURCHASE_FREQUENCY",
+  "PURCHASE_DATE",
+  "PURCHASE_DEPARTMENT",
+  "NUTRISCORE"
+ ],
+ "configuration": {
+  "googleBanners": {
+   "adUnitMainPath": "/21888805090/ah.nl_app/zoeken/1",
+   "adUnitSecondaryPath": "/21888805090/ah.nl_app/zoeken/2",
+   "customTemplateId": "11894057",
+   "divGptAd": "1577185579002-0"
+  }
+ },
+ "ads": [],
+ "taxonomyNodes": [
+  {
+   "id": 2390,
+   "name": "Halfvolle melk",
+   "images": [
+    {
+     "width": 800,
+     "height": 800,
+     "url": "https://static.ah.nl/dam/product/AHI_4354523130303533333732?revLabel=1&rendition=800x800_WEBP&fileType=binary"
+    },
+    {
+     "width": 400,
+     "height": 400,
+     "url": "https://static.ah.nl/dam/product/AHI_4354523130303533333732?revLabel=1&rendition=400x400_WEBP&fileType=binary"
+    },
+    {
+     "width": 200,
+     "height": 200,
+     "url": "https://static.ah.nl/dam/product/AHI_4354523130303533333732?revLabel=1&rendition=200x200_WEBP&fileType=binary"
+    },
+    {
+     "width": 48,
+     "height": 48,
+     "url": "https://static.ah.nl/dam/product/AHI_4354523130303533333732?revLabel=1&rendition=48x48_GIF&fileType=binary"
+    },
+    {
+     "width": 80,
+     "height": 80,
+     "url": "https://static.ah.nl/dam/product/AHI_4354523130303533333732?revLabel=1&rendition=80x80_JPG&fileType=binary"
+    }
+   ]
+  },
+  {
+   "id": 2392,
+   "name": "Volle melk",
+   "images": [
+    {
+     "width": 800,
+     "height": 800,
+     "url": "https://static.ah.nl/dam/product/AHI_4f4b4c6d5f597a71526d71696c4a3062743233414741?revLabel=1&rendition=800x800_WEBP&fileType=binary"
+    },
+    {
+     "width": 400,
+     "height": 400,
+     "url": "https://static.ah.nl/dam/product/AHI_4f4b4c6d5f597a71526d71696c4a3062743233414741?revLabel=1&rendition=400x400_WEBP&fileType=binary"
+    },
+    {
+     "width": 200,
+     "height": 200,
+     "url": "https://static.ah.nl/dam/product/AHI_4f4b4c6d5f597a71526d71696c4a3062743233414741?revLabel=1&rendition=200x200_WEBP&fileType=binary"
+    },
+    {
+     "width": 48,
+     "height": 48,
+     "url": "https://static.ah.nl/dam/product/AHI_4f4b4c6d5f597a71526d71696c4a3062743233414741?revLabel=1&rendition=48x48_GIF&fileType=binary"
+    },
+    {
+     "width": 80,
+     "height": 80,
+     "url": "https://static.ah.nl/dam/product/AHI_4f4b4c6d5f597a71526d71696c4a3062743233414741?revLabel=1&rendition=80x80_JPG&fileType=binary"
+    }
+   ]
+  },
+  {
+   "id": 2394,
+   "name": "Karnemelk",
+   "images": [
+    {
+     "width": 800,
+     "height": 800,
+     "url": "https://static.ah.nl/dam/product/AHI_7949354544706373546253614c6d6f75397a32767651?revLabel=1&rendition=800x800_WEBP&fileType=binary"
+    },
+    {
+     "width": 400,
+     "height": 400,
+     "url": "https://static.ah.nl/dam/product/AHI_7949354544706373546253614c6d6f75397a32767651?revLabel=1&rendition=400x400_WEBP&fileType=binary"
+    },
+    {
+     "width": 200,
+     "height": 200,
+     "url": "https://static.ah.nl/dam/product/AHI_7949354544706373546253614c6d6f75397a32767651?revLabel=1&rendition=200x200_WEBP&fileType=binary"
+    },
+    {
+     "width": 48,
+     "height": 48,
+     "url": "https://static.ah.nl/dam/product/AHI_7949354544706373546253614c6d6f75397a32767651?revLabel=1&rendition=48x48_GIF&fileType=binary"
+    },
+    {
+     "width": 80,
+     "height": 80,
+     "url": "https://static.ah.nl/dam/product/AHI_7949354544706373546253614c6d6f75397a32767651?revLabel=1&rendition=80x80_JPG&fileType=binary"
+    }
+   ]
+  },
+  {
+   "id": 5923,
+   "name": "Houdbare melk",
+   "images": [
+    {
+     "width": 800,
+     "height": 800,
+     "url": "https://static.ah.nl/dam/product/AHI_4354523130313930353335?revLabel=1&rendition=800x800_WEBP&fileType=binary"
+    },
+    {
+     "width": 400,
+     "height": 400,
+     "url": "https://static.ah.nl/dam/product/AHI_4354523130313930353335?revLabel=1&rendition=400x400_WEBP&fileType=binary"
+    },
+    {
+     "width": 200,
+     "height": 200,
+     "url": "https://static.ah.nl/dam/product/AHI_4354523130313930353335?revLabel=1&rendition=200x200_WEBP&fileType=binary"
+    },
+    {
+     "width": 48,
+     "height": 48,
+     "url": "https://static.ah.nl/dam/product/AHI_4354523130313930353335?revLabel=1&rendition=48x48_GIF&fileType=binary"
+    },
+    {
+     "width": 80,
+     "height": 80,
+     "url": "https://static.ah.nl/dam/product/AHI_4354523130313930353335?revLabel=1&rendition=80x80_JPG&fileType=binary"
+    }
+   ]
+  },
+  {
+   "id": 10118,
+   "name": "Lactosevrije melk",
+   "images": [
+    {
+     "width": 800,
+     "height": 800,
+     "url": "https://static.ah.nl/dam/product/AHI_613647376350786c51385745644144505a594f495467?revLabel=1&rendition=800x800_WEBP&fileType=binary"
+    },
+    {
+     "width": 400,
+     "height": 400,
+     "url": "https://static.ah.nl/dam/product/AHI_613647376350786c51385745644144505a594f495467?revLabel=1&rendition=400x400_WEBP&fileType=binary"
+    },
+    {
+     "width": 200,
+     "height": 200,
+     "url": "https://static.ah.nl/dam/product/AHI_613647376350786c51385745644144505a594f495467?revLabel=1&rendition=200x200_WEBP&fileType=binary"
+    },
+    {
+     "width": 48,
+     "height": 48,
+     "url": "https://static.ah.nl/dam/product/AHI_613647376350786c51385745644144505a594f495467?revLabel=1&rendition=48x48_GIF&fileType=binary"
+    },
+    {
+     "width": 80,
+     "height": 80,
+     "url": "https://static.ah.nl/dam/product/AHI_613647376350786c51385745644144505a594f495467?revLabel=1&rendition=80x80_JPG&fileType=binary"
+    }
+   ]
+  },
+  {
+   "id": 10170,
+   "name": "Melk drinkpakjes",
+   "images": [
+    {
+     "width": 800,
+     "height": 800,
+     "url": "https://static.ah.nl/dam/product/AHI_457a643676666954536e7538466367626c2d76554677?revLabel=1&rendition=800x800_WEBP&fileType=binary"
+    },
+    {
+     "width": 400,
+     "height": 400,
+     "url": "https://static.ah.nl/dam/product/AHI_457a643676666954536e7538466367626c2d76554677?revLabel=1&rendition=400x400_WEBP&fileType=binary"
+    },
+    {
+     "width": 200,
+     "height": 200,
+     "url": "https://static.ah.nl/dam/product/AHI_457a643676666954536e7538466367626c2d76554677?revLabel=1&rendition=200x200_WEBP&fileType=binary"
+    },
+    {
+     "width": 48,
+     "height": 48,
+     "url": "https://static.ah.nl/dam/product/AHI_457a643676666954536e7538466367626c2d76554677?revLabel=1&rendition=48x48_GIF&fileType=binary"
+    },
+    {
+     "width": 80,
+     "height": 80,
+     "url": "https://static.ah.nl/dam/product/AHI_457a643676666954536e7538466367626c2d76554677?revLabel=1&rendition=80x80_JPG&fileType=binary"
+    }
+   ]
+  }
+ ]
+}
