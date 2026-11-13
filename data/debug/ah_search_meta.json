@@ -1127,7 +1127,7 @@
     {
      "id": "sp_include_intolerance_geen_eieren",
      "label": "eieren",
-     "count": 405,
+     "count": 404,
      "display": true
     },
     {
@@ -1145,7 +1145,7 @@
     {
      "id": "sp_include_intolerance_geen_lupine",
      "label": "lupine",
-     "count": 510,
+     "count": 509,
      "display": true
     },
     {
@@ -1157,7 +1157,7 @@
     {
      "id": "sp_include_intolerance_geen_mosterd",
      "label": "mosterd",
-     "count": 512,
+     "count": 511,
      "display": true
     },
     {
@@ -1175,19 +1175,19 @@
     {
      "id": "sp_include_intolerance_geen_schelpdieren",
      "label": "schelpdieren",
-     "count": 513,
+     "count": 512,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_selderij",
      "label": "selderij",
-     "count": 514,
+     "count": 513,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_sesam",
      "label": "sesam",
-     "count": 498,
+     "count": 497,
      "display": true
     },
     {
@@ -1199,13 +1199,13 @@
     {
      "id": "sp_include_intolerance_geen_sulfiet",
      "label": "sulfiet",
-     "count": 513,
+     "count": 512,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_vis",
      "label": "vis",
-     "count": 497,
+     "count": 496,
      "display": true
     }
    ],
@@ -1244,7 +1244,7 @@
     {
      "id": "sp_include_dieet_vegetarisch",
      "label": "Vegetarisch",
-     "count": 409,
+     "count": 408,
      "display": true
     }
    ],
@@ -1283,7 +1283,7 @@
     {
      "id": "e",
      "label": "Score E",
-     "count": 295,
+     "count": 294,
      "display": true
     },
     {
@@ -1304,7 +1304,7 @@
     {
      "id": "Bonus",
      "label": "Bonus",
-     "count": 419,
+     "count": 450,
      "display": true
     }
    ],
@@ -1334,7 +1334,7 @@
     {
      "id": "np_goedkoopje",
      "label": "Prijsfavoriet",
-     "count": 44,
+     "count": 45,
      "display": true
     }
    ],
@@ -1394,7 +1394,7 @@
     {
      "id": "sp_include_dieet_vegetarisch",
      "label": "Vegetarisch",
-     "count": 409,
+     "count": 408,
      "display": true
     }
    ],
