@@ -1,7 +1,7 @@
 {
  "page": {
   "size": 5,
-  "totalElements": 970,
+  "totalElements": 967,
   "totalPages": 194,
   "number": 0
  },
@@ -29,7 +29,7 @@
     {
      "id": "AH",
      "label": "AH",
-     "count": 146,
+     "count": 143,
      "display": true
     },
     {
@@ -644,7 +644,7 @@
     {
      "id": "998",
      "label": "Chocolade",
-     "count": 366,
+     "count": 365,
      "display": true
     },
     {
@@ -950,13 +950,13 @@
     {
      "id": "10383",
      "label": "Melkchocolade met smaak",
-     "count": 82,
+     "count": 81,
      "display": true
     },
     {
      "id": "7964",
      "label": "Melkchocolade repen",
-     "count": 200,
+     "count": 199,
      "display": true
     },
     {
@@ -986,7 +986,7 @@
     {
      "id": "10565",
      "label": "Pepernoten, kruidnoten",
-     "count": 7,
+     "count": 5,
      "display": true
     },
     {
@@ -1004,7 +1004,7 @@
     {
      "id": "8729",
      "label": "Repen en tabletten",
-     "count": 226,
+     "count": 225,
      "display": true
     },
     {
@@ -1022,7 +1022,7 @@
     {
      "id": "1839",
      "label": "Snoep",
-     "count": 30,
+     "count": 28,
      "display": true
     },
     {
@@ -1127,7 +1127,7 @@
     {
      "id": "sp_include_intolerance_geen_eieren",
      "label": "eieren",
-     "count": 404,
+     "count": 405,
      "display": true
     },
     {
@@ -1238,7 +1238,7 @@
     {
      "id": "sp_include_dieet_veganistisch",
      "label": "Veganistisch",
-     "count": 38,
+     "count": 37,
      "display": true
     },
     {
@@ -1409,7 +1409,7 @@
     {
      "id": "sp_include_dieet_veganistisch",
      "label": "Veganistisch",
-     "count": 38,
+     "count": 37,
      "display": true
     }
    ],
