@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-14T07:37+00:00",
+ "updated": "2026-11-15T07:42+00:00",
  "prices": {
   "ah": 16173,
   "jumbo": 17294
  },
  "bonus": {
   "ah": 3684,
-  "jumbo": 1382
+  "jumbo": 2451
  },
  "errors": [],
  "probe": {
@@ -19,8 +19,8 @@
     967
    ],
    "kaas": [
-    1637,
-    1637
+    1636,
+    1636
    ],
    "vlees": [
     2529,
@@ -111,12 +111,12 @@
     1719
    ],
    "frisdrank": [
-    975,
-    975
+    974,
+    974
    ],
    "cola": [
-    214,
-    214
+    213,
+    213
    ],
    "sap": [
     238,
@@ -299,8 +299,8 @@
     354
    ],
    "vega": [
-    7238,
-    9980
+    7240,
+    9979
    ],
    "tofu": [
     14,
@@ -343,8 +343,8 @@
     2881
    ],
    "maaltijd": [
-    1394,
-    1394
+    1393,
+    1393
    ],
    "snack": [
     827,
@@ -359,10 +359,10 @@
     350
    ]
   },
-  "ah_scanned": 28200,
-  "jumbo_nuxt_promotions": 137,
-  "jumbo_cards": 137,
-  "jumbo_pages": 117,
+  "ah_scanned": 28199,
+  "jumbo_nuxt_promotions": 270,
+  "jumbo_cards": 270,
+  "jumbo_pages": 250,
   "jumbo_sample_cards": [
    {
     "t": "2e halve prijs",
@@ -371,40 +371,16 @@
     "period": "wo 4 feb t/m wo 30 dec"
    },
    {
-    "t": "voor 13,99 Alleen in de slijterij",
-    "title": "Hooghoudt dubbele graanjenever of Dujardin vieux",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
+    "t": "20% korting",
+    "title": "Aerstone, Monkey Shoulder of Famous Grouse Whisky",
+    "until": "2026-11-24",
+    "period": "wo 18 t/m di 24 nov"
    },
    {
-    "t": "5,00 korting Alleen in de slijterij",
-    "title": "Johnnie Walker whisky, Tanqueray gin of Ciroc vodka",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "1,09 per 500 gram Alleen in de winkel",
-    "title": "Broccoli",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "1,69 per kilo Alleen in de winkel",
-    "title": "Conference peren",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "2,79 per 500 gram Alleen in de winkel",
-    "title": "Zespri kiwi Sungold",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
-   },
-   {
-    "t": "2,49 per kilo Alleen in de winkel",
-    "title": "Alle Kanzi appels",
-    "until": "2026-11-17",
-    "period": "wo 11 t/m di 17 nov"
+    "t": "4,00 korting Alleen in de slijterij",
+    "title": "Captain Morgan Rum, Smirnoff Vodka, Gordon's Gin of Baileys likeur",
+    "until": "2026-11-24",
+    "period": "wo 18 t/m di 24 nov"
    },
    {
     "t": "29,99 OP=OP",
@@ -419,30 +395,6 @@
     "period": "wo 11 t/m di 24 nov"
    },
    {
-    "t": "1+1 gratis",
-    "title": "Afprijzing Halloween",
-    "until": "2026-11-15",
-    "period": "wo 4 t/m zo 15 nov"
-   },
-   {
-    "t": "2+1 gratis Alleen in de winkel",
-    "title": "HEMA handdoeken",
-    "until": "2026-11-17",
-    "period": "wo 4 t/m di 17 nov"
-   },
-   {
-    "t": "1+1 gratis",
-    "title": "HEMA sfeerlichten",
-    "until": "2026-11-17",
-    "period": "wo 4 t/m di 17 nov"
-   },
-   {
-    "t": "30% korting",
-    "title": "Tefal x HEMA hapjes- of koekenpan",
-    "until": "2026-11-17",
-    "period": "wo 4 t/m di 17 nov"
-   },
-   {
     "t": "50% korting Online spellen spelen",
     "title": "Samen spellen spelen",
     "until": "2027-01-05",
@@ -453,6 +405,54 @@
     "title": "Neutral",
     "until": "2026-12-08",
     "period": "wo 17 jun t/m di 8 dec"
+   },
+   {
+    "t": "50% korting Alleen online",
+    "title": "Robijn, Glorix of Sun",
+    "until": "2026-12-01",
+    "period": "wo 4 nov t/m di 1 dec"
+   },
+   {
+    "t": "1+1 gratis",
+    "title": "Alle Robijn Klein & Krachtig, wasmiddeldoekjes, capsules, drywash of quickwash",
+    "until": "2026-12-01",
+    "period": "wo 18 nov t/m di 1 dec"
+   },
+   {
+    "t": "1+1 gratis",
+    "title": "Alle Air Wick",
+    "until": "2026-12-01",
+    "period": "wo 18 nov t/m di 1 dec"
+   },
+   {
+    "t": "1+1 gratis",
+    "title": "Alle Finish of Cillit Bang",
+    "until": "2026-12-01",
+    "period": "wo 18 nov t/m di 1 dec"
+   },
+   {
+    "t": "1+1 gratis",
+    "title": "Alle Sun of Glorix zonder bleek",
+    "until": "2026-12-01",
+    "period": "wo 18 nov t/m di 1 dec"
+   },
+   {
+    "t": "1+1 gratis",
+    "title": "Alle Lenor",
+    "until": "2026-12-01",
+    "period": "wo 18 nov t/m di 1 dec"
+   },
+   {
+    "t": "1+1 gratis",
+    "title": "Alle Reus of Fleuril",
+    "until": "2026-12-01",
+    "period": "wo 18 nov t/m di 1 dec"
+   },
+   {
+    "t": "voor 1,00",
+    "title": "Alle Glorix toiletblokken",
+    "until": "2026-11-24",
+    "period": "wo 18 t/m di 24 nov"
    }
   ]
  }
