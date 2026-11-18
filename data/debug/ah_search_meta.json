@@ -1,8 +1,8 @@
 {
  "page": {
   "size": 5,
-  "totalElements": 967,
-  "totalPages": 194,
+  "totalElements": 965,
+  "totalPages": 193,
   "number": 0
  },
  "links": {
@@ -17,7 +17,7 @@
   },
   "prev": null,
   "last": {
-   "href": "https://ms.ah.nl:8080/mobile-services/product/search/v2?application=AHWEBSHOP&availableOnline=true&bonus=NONE&orderable=any&query=melk&sortBy=RELEVANCE&page=193&size=5"
+   "href": "https://ms.ah.nl:8080/mobile-services/product/search/v2?application=AHWEBSHOP&availableOnline=true&bonus=NONE&orderable=any&query=melk&sortBy=RELEVANCE&page=192&size=5"
   }
  },
  "filters": [
@@ -251,7 +251,7 @@
     {
      "id": "Hero Nutrasense",
      "label": "Hero Nutrasense",
-     "count": 5,
+     "count": 4,
      "display": true
     },
     {
@@ -563,7 +563,7 @@
     {
      "id": "Verkade",
      "label": "Verkade",
-     "count": 23,
+     "count": 22,
      "display": true
     },
     {
@@ -644,7 +644,7 @@
     {
      "id": "998",
      "label": "Chocolade",
-     "count": 367,
+     "count": 366,
      "display": true
     },
     {
@@ -656,13 +656,13 @@
     {
      "id": "10719",
      "label": "Chocoladeletters",
-     "count": 55,
+     "count": 54,
      "display": true
     },
     {
      "id": "3681",
      "label": "Chocoladeletters melk",
-     "count": 55,
+     "count": 54,
      "display": true
     },
     {
@@ -704,13 +704,13 @@
     {
      "id": "20724",
      "label": "Dreumes- en peutervoeding",
-     "count": 34,
+     "count": 33,
      "display": true
     },
     {
      "id": "5903",
      "label": "Dreumesmelk vanaf 12 maanden",
-     "count": 19,
+     "count": 18,
      "display": true
     },
     {
@@ -734,7 +734,7 @@
     {
      "id": "1973",
      "label": "Flesvoeding",
-     "count": 76,
+     "count": 75,
      "display": true
     },
     {
@@ -926,7 +926,7 @@
     {
      "id": "20725",
      "label": "Melk, pap (dreumes en peuter)",
-     "count": 33,
+     "count": 32,
      "display": true
     },
     {
@@ -1127,13 +1127,13 @@
     {
      "id": "sp_include_intolerance_geen_eieren",
      "label": "eieren",
-     "count": 400,
+     "count": 398,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_gluten",
      "label": "gluten",
-     "count": 294,
+     "count": 292,
      "display": true
     },
     {
@@ -1145,7 +1145,7 @@
     {
      "id": "sp_include_intolerance_geen_lupine",
      "label": "lupine",
-     "count": 504,
+     "count": 502,
      "display": true
     },
     {
@@ -1157,37 +1157,37 @@
     {
      "id": "sp_include_intolerance_geen_mosterd",
      "label": "mosterd",
-     "count": 506,
+     "count": 504,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_noten",
      "label": "noten",
-     "count": 267,
+     "count": 266,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_pindas",
      "label": "pinda's",
-     "count": 320,
+     "count": 319,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_schelpdieren",
      "label": "schelpdieren",
-     "count": 507,
+     "count": 505,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_selderij",
      "label": "selderij",
-     "count": 508,
+     "count": 506,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_sesam",
      "label": "sesam",
-     "count": 492,
+     "count": 490,
      "display": true
     },
     {
@@ -1199,13 +1199,13 @@
     {
      "id": "sp_include_intolerance_geen_sulfiet",
      "label": "sulfiet",
-     "count": 508,
+     "count": 506,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_vis",
      "label": "vis",
-     "count": 491,
+     "count": 490,
      "display": true
     }
    ],
@@ -1232,7 +1232,7 @@
     {
      "id": "sp_include_dieet_laag_zout",
      "label": "Laag zout",
-     "count": 387,
+     "count": 385,
      "display": true
     },
     {
@@ -1244,7 +1244,7 @@
     {
      "id": "sp_include_dieet_vegetarisch",
      "label": "Vegetarisch",
-     "count": 403,
+     "count": 402,
      "display": true
     }
    ],
@@ -1283,7 +1283,7 @@
     {
      "id": "e",
      "label": "Score E",
-     "count": 293,
+     "count": 292,
      "display": true
     },
     {
@@ -1394,7 +1394,7 @@
     {
      "id": "sp_include_dieet_vegetarisch",
      "label": "Vegetarisch",
-     "count": 403,
+     "count": 402,
      "display": true
     }
    ],
