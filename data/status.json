@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-18T07:50+00:00",
+ "updated": "2026-11-19T07:52+00:00",
  "prices": {
   "ah": 16173,
-  "jumbo": 17294
+  "jumbo": 17359
  },
  "bonus": {
-  "ah": 2184,
-  "jumbo": 1468
+  "ah": 2189,
+  "jumbo": 1470
  },
  "errors": [],
  "probe": {
@@ -15,20 +15,20 @@
   "ah_variant": null,
   "ah_cover": {
    "melk": [
-    965,
-    965
+    963,
+    963
    ],
    "kaas": [
-    1637,
-    1637
+    1638,
+    1638
    ],
    "vlees": [
-    2547,
-    2547
+    2550,
+    2550
    ],
    "kip": [
-    1067,
-    1067
+    1070,
+    1070
    ],
    "gehakt": [
     317,
@@ -39,8 +39,8 @@
     665
    ],
    "groente": [
-    1422,
-    1422
+    1423,
+    1423
    ],
    "fruit": [
     1611,
@@ -75,24 +75,24 @@
     258
    ],
    "saus": [
-    1220,
-    1220
+    1221,
+    1221
    ],
    "chips": [
-    388,
-    388
+    389,
+    389
    ],
    "koek": [
     983,
     983
    ],
    "chocolade": [
-    1426,
-    1426
+    1424,
+    1424
    ],
    "snoep": [
-    890,
-    890
+    888,
+    888
    ],
    "drop": [
     183,
@@ -107,8 +107,8 @@
     824
    ],
    "wijn": [
-    1688,
-    1688
+    1695,
+    1695
    ],
    "frisdrank": [
     974,
@@ -155,8 +155,8 @@
     641
    ],
    "eieren": [
-    650,
-    650
+    651,
+    651
    ],
    "ijs": [
     333,
@@ -179,8 +179,8 @@
     359
    ],
    "douche": [
-    423,
-    423
+    421,
+    421
    ],
    "deo": [
     50,
@@ -207,12 +207,12 @@
     561
    ],
    "papier": [
-    96,
-    96
+    94,
+    94
    ],
    "soep": [
-    824,
-    824
+    825,
+    825
    ],
    "bouillon": [
     95,
@@ -299,8 +299,8 @@
     354
    ],
    "vega": [
-    7236,
-    9964
+    7249,
+    10000
    ],
    "tofu": [
     14,
@@ -339,8 +339,8 @@
     169
    ],
    "vers": [
-    2877,
-    2877
+    2880,
+    2880
    ],
    "maaltijd": [
     1394,
@@ -351,17 +351,17 @@
     836
    ],
    "borrel": [
-    1143,
-    1143
+    1144,
+    1144
    ],
    "nootjes": [
-    350,
-    350
+    348,
+    348
    ]
   },
-  "ah_scanned": 28160,
-  "jumbo_nuxt_promotions": 171,
-  "jumbo_cards": 171,
+  "ah_scanned": 28165,
+  "jumbo_nuxt_promotions": 172,
+  "jumbo_cards": 172,
   "jumbo_pages": 153,
   "jumbo_sample_cards": [
    {
@@ -393,6 +393,12 @@
     "title": "Braadpan Gietijzer",
     "until": "2026-11-24",
     "period": "wo 11 t/m di 24 nov"
+   },
+   {
+    "t": "30% korting Alleen online - OP=OP",
+    "title": "999 Games Take 5!, Regenwormen of Clever",
+    "until": "2026-12-08",
+    "period": "wo 18 nov t/m di 8 dec"
    },
    {
     "t": "50% korting Online spellen spelen",
@@ -447,12 +453,6 @@
     "title": "Alle Reus of Fleuril",
     "until": "2026-12-01",
     "period": "wo 18 nov t/m di 1 dec"
-   },
-   {
-    "t": "voor 1,00",
-    "title": "Alle Glorix toiletblokken",
-    "until": "2026-11-24",
-    "period": "wo 18 t/m di 24 nov"
    }
   ]
  }
