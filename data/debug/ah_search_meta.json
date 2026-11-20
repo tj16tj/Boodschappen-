@@ -1,8 +1,8 @@
 {
  "page": {
   "size": 5,
-  "totalElements": 963,
-  "totalPages": 193,
+  "totalElements": 939,
+  "totalPages": 188,
   "number": 0
  },
  "links": {
@@ -17,7 +17,7 @@
   },
   "prev": null,
   "last": {
-   "href": "https://ms.ah.nl:8080/mobile-services/product/search/v2?application=AHWEBSHOP&availableOnline=true&bonus=NONE&orderable=any&query=melk&sortBy=RELEVANCE&page=192&size=5"
+   "href": "https://ms.ah.nl:8080/mobile-services/product/search/v2?application=AHWEBSHOP&availableOnline=true&bonus=NONE&orderable=any&query=melk&sortBy=RELEVANCE&page=187&size=5"
   }
  },
  "filters": [
@@ -53,7 +53,7 @@
     {
      "id": "Arla",
      "label": "Arla",
-     "count": 29,
+     "count": 33,
      "display": true
     },
     {
@@ -383,7 +383,7 @@
     {
      "id": "Melkunie",
      "label": "Melkunie",
-     "count": 92,
+     "count": 64,
      "display": true
     },
     {
@@ -738,6 +738,12 @@
      "display": true
     },
     {
+     "id": "11642",
+     "label": "Fruit-, noten-, haver-, mueslirepen",
+     "count": 4,
+     "display": true
+    },
+    {
      "id": "2537",
      "label": "Fruitbiscuit en melkbiscuit",
      "count": 44,
@@ -794,25 +800,19 @@
     {
      "id": "18264",
      "label": "High protein",
-     "count": 36,
+     "count": 12,
      "display": true
     },
     {
      "id": "19582",
      "label": "High protein drinks",
-     "count": 18,
+     "count": 12,
      "display": true
     },
     {
      "id": "18272",
      "label": "High protein tussendoortjes",
-     "count": 33,
-     "display": true
-    },
-    {
-     "id": "19579",
-     "label": "High protein yoghurt tussendoortjes",
-     "count": 5,
+     "count": 12,
      "display": true
     },
     {
@@ -1094,7 +1094,7 @@
     {
      "id": "20878",
      "label": "Yoghurt en skyr",
-     "count": 36,
+     "count": 35,
      "display": true
     },
     {
@@ -1304,7 +1304,7 @@
     {
      "id": "Bonus",
      "label": "Bonus",
-     "count": 426,
+     "count": 456,
      "display": true
     }
    ],
