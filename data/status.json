@@ -1,21 +1,365 @@
 {
- "updated": "2026-11-20T07:50+00:00",
+ "updated": "2026-11-21T07:45+00:00",
  "prices": {
   "ah": 16173,
   "jumbo": 17359
  },
  "bonus": {
-  "ah": 0,
-  "jumbo": 1467
+  "ah": 4115,
+  "jumbo": 1468
  },
- "errors": [
-  "AH assortiment: 500 Server Error: Internal Server Error for url: https://api.ah.nl/mobile-services/product/search/v2?query=vers&page=2&size=750&sortOn=RELEVANCE",
-  "ah: vorige bonus aangehouden (2189)"
- ],
+ "errors": [],
  "probe": {
   "ah_bonuspage": "500 Server Error: Internal Server Error for url: https://api.ah.nl/mobile-services/bonuspage/v1/metadata",
   "ah_categories_status": 404,
   "ah_variant": null,
+  "ah_cover": {
+   "melk": [
+    934,
+    934
+   ],
+   "kaas": [
+    1638,
+    1638
+   ],
+   "vlees": [
+    2550,
+    2550
+   ],
+   "kip": [
+    1070,
+    1070
+   ],
+   "gehakt": [
+    317,
+    317
+   ],
+   "brood": [
+    667,
+    667
+   ],
+   "groente": [
+    1422,
+    1422
+   ],
+   "fruit": [
+    1610,
+    1610
+   ],
+   "aardappel": [
+    209,
+    209
+   ],
+   "tomaat": [
+    236,
+    236
+   ],
+   "appel": [
+    688,
+    688
+   ],
+   "banaan": [
+    145,
+    145
+   ],
+   "sla": [
+    45,
+    45
+   ],
+   "pasta": [
+    889,
+    889
+   ],
+   "rijst": [
+    258,
+    258
+   ],
+   "saus": [
+    1222,
+    1222
+   ],
+   "chips": [
+    389,
+    389
+   ],
+   "koek": [
+    982,
+    982
+   ],
+   "chocolade": [
+    1414,
+    1414
+   ],
+   "snoep": [
+    887,
+    887
+   ],
+   "drop": [
+    183,
+    183
+   ],
+   "noten": [
+    558,
+    558
+   ],
+   "bier": [
+    824,
+    824
+   ],
+   "wijn": [
+    1695,
+    1695
+   ],
+   "frisdrank": [
+    977,
+    977
+   ],
+   "cola": [
+    213,
+    213
+   ],
+   "sap": [
+    238,
+    238
+   ],
+   "water": [
+    538,
+    538
+   ],
+   "koffie": [
+    763,
+    763
+   ],
+   "thee": [
+    349,
+    349
+   ],
+   "yoghurt": [
+    459,
+    459
+   ],
+   "kwark": [
+    142,
+    142
+   ],
+   "vla": [
+    82,
+    82
+   ],
+   "boter": [
+    387,
+    387
+   ],
+   "room": [
+    641,
+    641
+   ],
+   "eieren": [
+    650,
+    650
+   ],
+   "ijs": [
+    333,
+    333
+   ],
+   "pizza": [
+    233,
+    233
+   ],
+   "diepvries": [
+    1231,
+    1231
+   ],
+   "friet": [
+    49,
+    49
+   ],
+   "shampoo": [
+    359,
+    359
+   ],
+   "douche": [
+    421,
+    421
+   ],
+   "deo": [
+    50,
+    50
+   ],
+   "tandpasta": [
+    345,
+    345
+   ],
+   "scheer": [
+    156,
+    156
+   ],
+   "wasmiddel": [
+    453,
+    453
+   ],
+   "afwas": [
+    78,
+    78
+   ],
+   "schoonmaak": [
+    562,
+    562
+   ],
+   "papier": [
+    96,
+    96
+   ],
+   "soep": [
+    828,
+    828
+   ],
+   "bouillon": [
+    95,
+    95
+   ],
+   "kruiden": [
+    770,
+    770
+   ],
+   "olie": [
+    368,
+    368
+   ],
+   "mayonaise": [
+    116,
+    116
+   ],
+   "salade": [
+    326,
+    326
+   ],
+   "vis": [
+    628,
+    628
+   ],
+   "zalm": [
+    294,
+    294
+   ],
+   "worst": [
+    640,
+    640
+   ],
+   "ham": [
+    111,
+    111
+   ],
+   "salami": [
+    120,
+    120
+   ],
+   "beleg": [
+    1406,
+    1406
+   ],
+   "pindakaas": [
+    154,
+    154
+   ],
+   "jam": [
+    71,
+    71
+   ],
+   "hagelslag": [
+    64,
+    64
+   ],
+   "ontbijt": [
+    520,
+    520
+   ],
+   "muesli": [
+    173,
+    173
+   ],
+   "cracker": [
+    203,
+    203
+   ],
+   "baby": [
+    1260,
+    1260
+   ],
+   "luiers": [
+    285,
+    285
+   ],
+   "kat": [
+    92,
+    92
+   ],
+   "hond": [
+    354,
+    354
+   ],
+   "vega": [
+    7257,
+    10000
+   ],
+   "tofu": [
+    14,
+    14
+   ],
+   "wraps": [
+    76,
+    76
+   ],
+   "noodles": [
+    151,
+    151
+   ],
+   "mexicaans": [
+    233,
+    233
+   ],
+   "italiaans": [
+    1013,
+    1013
+   ],
+   "aziatisch": [
+    755,
+    755
+   ],
+   "taart": [
+    128,
+    128
+   ],
+   "cake": [
+    179,
+    179
+   ],
+   "gebak": [
+    169,
+    169
+   ],
+   "vers": [
+    2882,
+    2882
+   ],
+   "maaltijd": [
+    1394,
+    1394
+   ],
+   "snack": [
+    839,
+    839
+   ],
+   "borrel": [
+    1144,
+    1144
+   ],
+   "nootjes": [
+    348,
+    348
+   ]
+  },
+  "ah_scanned": 28170,
   "jumbo_nuxt_promotions": 173,
   "jumbo_cards": 173,
   "jumbo_pages": 154,

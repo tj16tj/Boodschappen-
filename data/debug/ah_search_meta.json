@@ -1,8 +1,8 @@
 {
  "page": {
   "size": 5,
-  "totalElements": 939,
-  "totalPages": 188,
+  "totalElements": 934,
+  "totalPages": 187,
   "number": 0
  },
  "links": {
@@ -17,7 +17,7 @@
   },
   "prev": null,
   "last": {
-   "href": "https://ms.ah.nl:8080/mobile-services/product/search/v2?application=AHWEBSHOP&availableOnline=true&bonus=NONE&orderable=any&query=melk&sortBy=RELEVANCE&page=187&size=5"
+   "href": "https://ms.ah.nl:8080/mobile-services/product/search/v2?application=AHWEBSHOP&availableOnline=true&bonus=NONE&orderable=any&query=melk&sortBy=RELEVANCE&page=186&size=5"
   }
  },
  "filters": [
@@ -155,7 +155,7 @@
     {
      "id": "Delicata",
      "label": "Delicata",
-     "count": 146,
+     "count": 142,
      "display": true
     },
     {
@@ -521,7 +521,7 @@
     {
      "id": "Tony's Chocolonely",
      "label": "Tony's Chocolonely",
-     "count": 34,
+     "count": 33,
      "display": true
     },
     {
@@ -644,7 +644,7 @@
     {
      "id": "998",
      "label": "Chocolade",
-     "count": 364,
+     "count": 359,
      "display": true
     },
     {
@@ -656,13 +656,13 @@
     {
      "id": "10719",
      "label": "Chocoladeletters",
-     "count": 52,
+     "count": 51,
      "display": true
     },
     {
      "id": "3681",
      "label": "Chocoladeletters melk",
-     "count": 52,
+     "count": 51,
      "display": true
     },
     {
@@ -950,13 +950,13 @@
     {
      "id": "10383",
      "label": "Melkchocolade met smaak",
-     "count": 81,
+     "count": 77,
      "display": true
     },
     {
      "id": "7964",
      "label": "Melkchocolade repen",
-     "count": 199,
+     "count": 195,
      "display": true
     },
     {
@@ -1004,7 +1004,7 @@
     {
      "id": "8729",
      "label": "Repen en tabletten",
-     "count": 225,
+     "count": 221,
      "display": true
     },
     {
@@ -1145,7 +1145,7 @@
     {
      "id": "sp_include_intolerance_geen_lupine",
      "label": "lupine",
-     "count": 506,
+     "count": 504,
      "display": true
     },
     {
@@ -1157,7 +1157,7 @@
     {
      "id": "sp_include_intolerance_geen_mosterd",
      "label": "mosterd",
-     "count": 508,
+     "count": 506,
      "display": true
     },
     {
@@ -1175,19 +1175,19 @@
     {
      "id": "sp_include_intolerance_geen_schelpdieren",
      "label": "schelpdieren",
-     "count": 509,
+     "count": 507,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_selderij",
      "label": "selderij",
-     "count": 510,
+     "count": 508,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_sesam",
      "label": "sesam",
-     "count": 493,
+     "count": 491,
      "display": true
     },
     {
@@ -1199,13 +1199,13 @@
     {
      "id": "sp_include_intolerance_geen_sulfiet",
      "label": "sulfiet",
-     "count": 509,
+     "count": 507,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_vis",
      "label": "vis",
-     "count": 490,
+     "count": 488,
      "display": true
     }
    ],
@@ -1232,7 +1232,7 @@
     {
      "id": "sp_include_dieet_laag_zout",
      "label": "Laag zout",
-     "count": 387,
+     "count": 386,
      "display": true
     },
     {
@@ -1244,7 +1244,7 @@
     {
      "id": "sp_include_dieet_vegetarisch",
      "label": "Vegetarisch",
-     "count": 404,
+     "count": 402,
      "display": true
     }
    ],
@@ -1283,7 +1283,7 @@
     {
      "id": "e",
      "label": "Score E",
-     "count": 290,
+     "count": 288,
      "display": true
     },
     {
@@ -1304,7 +1304,7 @@
     {
      "id": "Bonus",
      "label": "Bonus",
-     "count": 456,
+     "count": 453,
      "display": true
     }
    ],
@@ -1394,7 +1394,7 @@
     {
      "id": "sp_include_dieet_vegetarisch",
      "label": "Vegetarisch",
-     "count": 404,
+     "count": 402,
      "display": true
     }
    ],
