@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-21T07:45+00:00",
+ "updated": "2026-11-22T07:47+00:00",
  "prices": {
   "ah": 16173,
   "jumbo": 17359
  },
  "bonus": {
-  "ah": 4115,
-  "jumbo": 1468
+  "ah": 4116,
+  "jumbo": 2379
  },
  "errors": [],
  "probe": {
@@ -43,8 +43,8 @@
     1422
    ],
    "fruit": [
-    1610,
-    1610
+    1608,
+    1608
    ],
    "aardappel": [
     209,
@@ -71,8 +71,8 @@
     889
    ],
    "rijst": [
-    258,
-    258
+    257,
+    257
    ],
    "saus": [
     1222,
@@ -107,8 +107,8 @@
     824
    ],
    "wijn": [
-    1695,
-    1695
+    1694,
+    1694
    ],
    "frisdrank": [
     977,
@@ -299,7 +299,7 @@
     354
    ],
    "vega": [
-    7257,
+    7252,
     10000
    ],
    "tofu": [
@@ -323,8 +323,8 @@
     1013
    ],
    "aziatisch": [
-    755,
-    755
+    754,
+    754
    ],
    "taart": [
     128,
@@ -359,10 +359,10 @@
     348
    ]
   },
-  "ah_scanned": 28170,
-  "jumbo_nuxt_promotions": 173,
-  "jumbo_cards": 173,
-  "jumbo_pages": 154,
+  "ah_scanned": 28167,
+  "jumbo_nuxt_promotions": 256,
+  "jumbo_cards": 256,
+  "jumbo_pages": 237,
   "jumbo_sample_cards": [
    {
     "t": "2e halve prijs",
@@ -371,34 +371,40 @@
     "period": "wo 4 feb t/m wo 30 dec"
    },
    {
-    "t": "20% korting",
-    "title": "Aerstone, Monkey Shoulder of Famous Grouse Whisky",
-    "until": "2026-11-24",
-    "period": "wo 18 t/m di 24 nov"
+    "t": "25% korting Alleen in de slijterij",
+    "title": "Talisker, Singleton, Cardhu, Dalwhinnie, Laguvulin, of Johnnie Walker",
+    "until": "2026-12-01",
+    "period": "wo 25 nov t/m di 1 dec"
    },
    {
     "t": "4,00 korting Alleen in de slijterij",
-    "title": "Captain Morgan Rum, Smirnoff Vodka, Gordon's Gin of Baileys likeur",
-    "until": "2026-11-24",
-    "period": "wo 18 t/m di 24 nov"
+    "title": "Disaronno",
+    "until": "2026-12-01",
+    "period": "wo 25 nov t/m di 1 dec"
    },
    {
-    "t": "29,99 OP=OP",
-    "title": "Braadpan Gietijzer",
-    "until": "2026-11-24",
-    "period": "wo 11 t/m di 24 nov"
-   },
-   {
-    "t": "14,99 OP=OP",
-    "title": "Braadpan Gietijzer",
-    "until": "2026-11-24",
-    "period": "wo 11 t/m di 24 nov"
+    "t": "4,00 korting Alleen in de slijterij",
+    "title": "Glen Talloch Whisky of Old Captain Rum",
+    "until": "2026-12-01",
+    "period": "wo 25 nov t/m di 1 dec"
    },
    {
     "t": "30% korting Alleen online - OP=OP",
     "title": "999 Games Take 5!, Regenwormen of Clever",
     "until": "2026-12-08",
     "period": "wo 18 nov t/m di 8 dec"
+   },
+   {
+    "t": "2+2 gratis",
+    "title": "Alle HEMA panty's",
+    "until": "2026-12-01",
+    "period": "wo 25 nov t/m di 1 dec"
+   },
+   {
+    "t": "1+1 gratis",
+    "title": "Alle Duracell",
+    "until": "2026-12-01",
+    "period": "wo 25 nov t/m di 1 dec"
    },
    {
     "t": "50% korting Online spellen spelen",
@@ -445,12 +451,6 @@
    {
     "t": "1+1 gratis",
     "title": "Alle Lenor",
-    "until": "2026-12-01",
-    "period": "wo 18 nov t/m di 1 dec"
-   },
-   {
-    "t": "1+1 gratis",
-    "title": "Alle Reus of Fleuril",
     "until": "2026-12-01",
     "period": "wo 18 nov t/m di 1 dec"
    }
