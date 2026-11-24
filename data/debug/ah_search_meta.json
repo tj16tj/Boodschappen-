@@ -1,7 +1,7 @@
 {
  "page": {
   "size": 5,
-  "totalElements": 934,
+  "totalElements": 933,
   "totalPages": 187,
   "number": 0
  },
@@ -155,7 +155,7 @@
     {
      "id": "Delicata",
      "label": "Delicata",
-     "count": 142,
+     "count": 141,
      "display": true
     },
     {
@@ -644,7 +644,7 @@
     {
      "id": "998",
      "label": "Chocolade",
-     "count": 359,
+     "count": 358,
      "display": true
     },
     {
@@ -656,13 +656,13 @@
     {
      "id": "10719",
      "label": "Chocoladeletters",
-     "count": 51,
+     "count": 50,
      "display": true
     },
     {
      "id": "3681",
      "label": "Chocoladeletters melk",
-     "count": 51,
+     "count": 50,
      "display": true
     },
     {
@@ -1127,13 +1127,13 @@
     {
      "id": "sp_include_intolerance_geen_eieren",
      "label": "eieren",
-     "count": 403,
+     "count": 402,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_gluten",
      "label": "gluten",
-     "count": 297,
+     "count": 296,
      "display": true
     },
     {
@@ -1145,7 +1145,7 @@
     {
      "id": "sp_include_intolerance_geen_lupine",
      "label": "lupine",
-     "count": 504,
+     "count": 503,
      "display": true
     },
     {
@@ -1157,7 +1157,7 @@
     {
      "id": "sp_include_intolerance_geen_mosterd",
      "label": "mosterd",
-     "count": 506,
+     "count": 505,
      "display": true
     },
     {
@@ -1169,25 +1169,25 @@
     {
      "id": "sp_include_intolerance_geen_pindas",
      "label": "pinda's",
-     "count": 323,
+     "count": 322,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_schelpdieren",
      "label": "schelpdieren",
-     "count": 507,
+     "count": 506,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_selderij",
      "label": "selderij",
-     "count": 508,
+     "count": 507,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_sesam",
      "label": "sesam",
-     "count": 491,
+     "count": 490,
      "display": true
     },
     {
@@ -1199,13 +1199,13 @@
     {
      "id": "sp_include_intolerance_geen_sulfiet",
      "label": "sulfiet",
-     "count": 507,
+     "count": 506,
      "display": true
     },
     {
      "id": "sp_include_intolerance_geen_vis",
      "label": "vis",
-     "count": 488,
+     "count": 487,
      "display": true
     }
    ],
@@ -1232,7 +1232,7 @@
     {
      "id": "sp_include_dieet_laag_zout",
      "label": "Laag zout",
-     "count": 386,
+     "count": 385,
      "display": true
     },
     {
@@ -1244,7 +1244,7 @@
     {
      "id": "sp_include_dieet_vegetarisch",
      "label": "Vegetarisch",
-     "count": 402,
+     "count": 401,
      "display": true
     }
    ],
@@ -1283,7 +1283,7 @@
     {
      "id": "e",
      "label": "Score E",
-     "count": 288,
+     "count": 287,
      "display": true
     },
     {
@@ -1304,7 +1304,7 @@
     {
      "id": "Bonus",
      "label": "Bonus",
-     "count": 421,
+     "count": 420,
      "display": true
     }
    ],
@@ -1394,7 +1394,7 @@
     {
      "id": "sp_include_dieet_vegetarisch",
      "label": "Vegetarisch",
-     "count": 402,
+     "count": 401,
      "display": true
     }
    ],
